@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>crzn.io</title>
+	<link rel="shortcut icon" href="media/image/favicon.ico">
+
+<link rel="stylesheet" href="../vendor/jquery.mobile-1.4.5.min.css" />
+
+<script src="../vendor/jquery-1.11.1.min.js"></script>
+<script src="../vendor/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="../vendor/own.css">
+	<link rel="stylesheet" type="text/css" href="nums.css">
+
+	<style>
+					.texts {style="font-family: Arial;
+					font-style: none;
+					font-weight: bolder;
+					text-decoration: none;
+					text-transform: none;
+					color: white;
+					text-shadow: 0 0 0"}
+	</style>
+
+	<style type="text/css">
+						.main-bg{
+							background-image:url(media/image/main-bg.jpg);
+							background-size: 100%;
+						}
+
+
+						.feeter {
+							position: fixed;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+						}
+
+						.lala{background-image: url(../media/image/bibi.png); background-position: top;}
+
+						.wut{font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%; background-image: url(../media/image/spk.png); width: 50px; height: 50px}
+
+	</style>
+
+
+
+
+<style>
+img:active {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+
+
+
+	<script type="text/javascript">
+          function leggo() {
+           var crznbgm = document.getElementById("bgm");
+           crznbgm.volume = 0.2;
+          crznbgm.play();
+          }
+	</script>
+
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+
+            </style>
+
+
+            <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to return home?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  window.location = "../index.html";
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+          </script>
+
+
+
+
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+
+</head>
+<body class="main-bg lala" onload="leggo(), onLoad()" >
+
+ <div class="se-pre-con"></div> 
+
+	<audio id="bgm" loop="true" hidden="true" src="../media/audio/BGM.mp3" type="audio/mp3"></audio> 
+
+
+
+
+	<audio id="poot" hidden="true" src="../media/audio/poot.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crznpoot = document.getElementById("poot");
+		  function pootplay() {crznpoot.play();}
+	  </script> 
+
+
+
+<!-- Start of main page -->
+<div data-role="page" id="main_menu" class="main-bg" style="background-image: url(../media/image/bibi.png);background-position: top; background-size: 100%">
+
+
+
+
+  
+
+		<center>
+				<div role="header" class="header" style="margin-top: 80px">
+					<center><img src="media/image/main.png" style="width: 90%" class="bootboot"></center>
+
+				</div><!-- /content -->
+
+
+				<div class="align-bottom" style="margin-top: 25px">
+
+					
+
+					<a href="#aa" data-transition="pop" ><button onclick="Startplay()" class="nxt" style="width:185px; height: 60px;margin-bottom: 5px"> <b> ▷ Start </b> </button></a>
+
+
+						<audio id="start" hidden="true" src="../media/audio/start.mp3" type="audio/mp3"> </audio>
+						  <script>
+							  var startplay = document.getElementById("start");
+							  function Startplay() {startplay.play();}
+						  </script> 
+
+
+					<br>
+					<a href="#crzn_help" data-transition="flip" ><button onclick="pootplay()" class="nxt" style="width:185px; height: 60px;margin-top: 15px"> <b> ? Help </b> </button></a>
+
+<br><br>
+					
+				</div><!-- /footer -->
+
+		</center>
+
+
+</div> <!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of help -->
+<div data-role="page" id="crzn_help" style="background-image: linear-gradient(to right top, #34f892, #00e1ca, #00c3f4, #009ffe, #1275e1);">
+	
+	<button class="btn-info btn btn-block" disabled="disabled">Instructions</button>
+	<br>
+	<div class="container">
+		<center>
+		<img src="media/image/help.png" style="width:80%">
+		</center>
+
+		<br>
+		<h3 style="color: white"> 1 Press to hear the name of the letter.</h3>
+		<br>
+		<h3 style="color: white"> 2 Press to hear the object name.</h3>
+		<br>
+		<h3 style="color: white"> 3 Press to hear the pronounciation.</h3>
+		<br>
+		<h3 style="color: white"> Use the next & back button to navigate letters.</h3>
+
+	</div><br><br>
+
+	<center>
+		<a href="#main_menu"><button onclick="pootplay()" class="nxt"> Okay </button></a>
+	</center>
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of aa  -->
+<div data-role="page" id="aa" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Apro()"></button><br><br>
+
+	
+			<h3>Apple</h3>
+			<img src="media/image/object/aa.png" onclick="Aobj()" style="width: 60%;" class="jellyrice"><br><br>
+
+
+
+			<img src="media/image/aa.png" onclick="A()" style="width: 95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="apro" hidden="true" src="media/audio/pronounciation/aa.mp3" type="audio/mp3"> </audio>
+	<audio id="aobj" hidden="true" src="media/audio/object/aa.mp3" type="audio/mp3"> </audio>
+	<audio id="aname" hidden="true" src="media/audio/name/aa.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var aproplay = document.getElementById("apro");
+		  function Apro() {aproplay.play();}
+
+	  	  var aobjplay = document.getElementById("aobj");
+		  function Aobj() {aobjplay.play();}
+
+		  var a = document.getElementById("aname");
+		  function A() {a.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#main_menu" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#bb" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of bb  -->
+<div data-role="page" id="bb" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Bpro()"></button><br><br>
+
+
+			<h3>Boy</h3>
+			<img src="media/image/object/bb.png" onclick="Bobj()" style="width: 40%;" class="jellyrice"><br><br>
+
+			<img src="media/image/bb.png" onclick="B()" style="width: 90%;" >
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="bpro" hidden="true" src="media/audio/pronounciation/bb.mp3" type="audio/mp3"> </audio>
+	<audio id="bobj" hidden="true" src="media/audio/object/bb.mp3" type="audio/mp3"> </audio>
+	<audio id="bname" hidden="true" src="media/audio/name/bb.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var bproplay = document.getElementById("bpro");
+		  function Bpro() {bproplay.play();}
+
+	  	  var bobjplay = document.getElementById("bobj");
+		  function Bobj() {bobjplay.play();}
+
+		  var b = document.getElementById("bname");
+		  function B() {b.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#aa" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#cc" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of cc  -->
+<div data-role="page" id="cc" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Cpro()"></button><br><br>
+
+			<h3>Cow</h3>
+			<img src="media/image/object/cc.png" onclick="Cobj()" style="width: 90%;" class="jellyrice"><br><br>
+
+			<img src="media/image/cc.png" onclick="C()" style="width: 95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="cpro" hidden="true" src="media/audio/pronounciation/cc.mp3" type="audio/mp3"> </audio>
+	<audio id="cobj" hidden="true" src="media/audio/object/cc.mp3" type="audio/mp3"> </audio>
+	<audio id="cname" hidden="true" src="media/audio/name/cc.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var cproplay = document.getElementById("cpro");
+		  function Cpro() {cproplay.play();}
+
+	  	  var cobjplay = document.getElementById("cobj");
+		  function Cobj() {cobjplay.play();}
+
+		  var c = document.getElementById("cname");
+		  function C() {c.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#bb" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#dd" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of dd  -->
+<div data-role="page" id="dd" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Dpro()"></button><br><br>
+
+			<h3>Dog</h3>
+			<img src="media/image/object/dd.png" onclick="Dobj()" style="width: 90%;" class="jellyrice"><br><br>
+
+			<img src="media/image/dd.png" onclick="D()" style="width: 95%;" >
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="dpro" hidden="true" src="media/audio/pronounciation/dd.mp3" type="audio/mp3"> </audio>
+	<audio id="dobj" hidden="true" src="media/audio/object/dd.mp3" type="audio/mp3"> </audio>
+	<audio id="dname" hidden="true" src="media/audio/name/dd.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var dproplay = document.getElementById("dpro");
+		  function Dpro() {dproplay.play();}
+
+	  	  var dobjplay = document.getElementById("dobj");
+		  function Dobj() {dobjplay.play();}
+
+		  var d = document.getElementById("dname");
+		  function D() {d.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#cc" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#ee" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--   Start of ee  -->
+<div data-role="page" id="ee" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Epro()"></button><br><br>
+
+			<h3>Elf</h3>
+			<img src="media/image/object/ee.png" onclick="Eobj()" style="width: 60%;" class="jellyrice"><br><br>
+
+			<img src="media/image/ee.png" onclick="E()" style="width: 95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="epro" hidden="true" src="media/audio/pronounciation/ee.mp3" type="audio/mp3"> </audio>
+	<audio id="eobj" hidden="true" src="media/audio/object/ee.mp3" type="audio/mp3"> </audio>
+	<audio id="ename" hidden="true" src="media/audio/name/ee.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var eproplay = document.getElementById("epro");
+		  function Epro() {eproplay.play();}
+
+	  	  var eobjplay = document.getElementById("eobj");
+		  function Eobj() {eobjplay.play();}
+
+		  var e = document.getElementById("ename");
+		  function E() {e.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#dd" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#ff" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of ff  -->
+<div data-role="page" id="ff" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Fpro()"></button><br><br>
+
+			<h3>Flower</h3>
+
+			<img src="media/image/object/ff.png" onclick="Fobj()" style="width: 40%;" class="jellyrice"><br><br>
+
+			<img src="media/image/ff.png" onclick="F()" style="width:80%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="fpro" hidden="true" src="media/audio/pronounciation/ff.mp3" type="audio/mp3"> </audio>
+	<audio id="fobj" hidden="true" src="media/audio/object/ff.mp3" type="audio/mp3"> </audio>
+	<audio id="fname" hidden="true" src="media/audio/name/ff.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var fproplay = document.getElementById("fpro");
+		  function Fpro() {fproplay.play();}
+
+	  	  var fobjplay = document.getElementById("fobj");
+		  function Fobj() {fobjplay.play();}
+
+		  var f = document.getElementById("fname");
+		  function F() {f.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#ee" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#gg" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of gg  -->
+<div data-role="page" id="gg" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Gpro()"></button><br><br>
+
+			<h3>Girl</h3>
+			<img src="media/image/object/gg.png" onclick="Gobj()" style="width: 40%;" class="jellyrice"><br><br>
+
+			<img src="media/image/gg.png" onclick="G()" style="width:90%;" >
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="gpro" hidden="true" src="media/audio/pronounciation/gg.mp3" type="audio/mp3"> </audio>
+	<audio id="gobj" hidden="true" src="media/audio/object/gg.mp3" type="audio/mp3"> </audio>
+	<audio id="gname" hidden="true" src="media/audio/name/gg.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var gproplay = document.getElementById("gpro");
+		  function Gpro() {gproplay.play();}
+
+	  	  var gobjplay = document.getElementById("gobj");
+		  function Gobj() {gobjplay.play();}
+
+		  var g = document.getElementById("gname");
+		  function G() {g.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#ff" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#hh" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of hh  -->
+<div data-role="page" id="hh" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Hpro()"></button><br><br>
+
+			<h3>Hat</h3>
+			<img src="media/image/object/hh.png" onclick="Hobj()" style="width: 90%;" class="jellyrice"><br><br>
+
+			<img src="media/image/hh.png" onclick="H()" style="width:90%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="hpro" hidden="true" src="media/audio/pronounciation/hh.mp3" type="audio/mp3"> </audio>
+	<audio id="hobj" hidden="true" src="media/audio/object/hh.mp3" type="audio/mp3"> </audio>
+	<audio id="hname" hidden="true" src="media/audio/name/hh.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var hproplay = document.getElementById("hpro");
+		  function Hpro() {hproplay.play();}
+
+	  	  var hobjplay = document.getElementById("hobj");
+		  function Hobj() {hobjplay.play();}
+
+		  var h = document.getElementById("hname");
+		  function H() {h.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#gg" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#ii" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of ii  -->
+<div data-role="page" id="ii" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Ipro()"></button><br><br>
+
+			<h3>Igloo</h3>
+			<img src="media/image/object/ii.png" onclick="Iobj()" style="width: 75%;" class="jellyrice"><br><br>
+
+			<img src="media/image/ii.png" onclick="I()" style="width:75%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="ipro" hidden="true" src="media/audio/pronounciation/ii.mp3" type="audio/mp3"> </audio>
+	<audio id="iobj" hidden="true" src="media/audio/object/ii.mp3" type="audio/mp3"> </audio>
+	<audio id="iname" hidden="true" src="media/audio/name/ii.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var iproplay = document.getElementById("ipro");
+		  function Ipro() {iproplay.play();}
+
+	  	  var iobjplay = document.getElementById("iobj");
+		  function Iobj() {iobjplay.play();}
+
+		  var i = document.getElementById("iname");
+		  function I() {i.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#hh" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#jj" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of jj  -->
+<div data-role="page" id="jj" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Jpro()"></button><br><br>
+
+			<h3>Jam</h3>
+
+			<img src="media/image/object/jj.png" onclick="Jobj()" style="width: 40%;" class="jellyrice"><br><br>
+
+			<img src="media/image/jj.png" onclick="J()" style="width:75%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="jpro" hidden="true" src="media/audio/pronounciation/jj.mp3" type="audio/mp3"> </audio>
+	<audio id="jobj" hidden="true" src="media/audio/object/jj.mp3" type="audio/mp3"> </audio>
+	<audio id="jname" hidden="true" src="media/audio/name/jj.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var jproplay = document.getElementById("jpro");
+		  function Jpro() {jproplay.play();}
+
+	  	  var jobjplay = document.getElementById("jobj");
+		  function Jobj() {jobjplay.play();}
+
+		  var j = document.getElementById("jname");
+		  function J() {j.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#ii" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#kk" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of kk  -->
+<div data-role="page" id="kk" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Kpro()"></button><br><br>
+
+			<h3>Kettle</h3>
+			<img src="media/image/object/kk.png" onclick="Kobj()" style="width: 80%;" class="jellyrice"><br><br>
+
+			<img src="media/image/kk.png" onclick="K()" style="width:85%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="kpro" hidden="true" src="media/audio/pronounciation/kk.mp3" type="audio/mp3"> </audio>
+	<audio id="kobj" hidden="true" src="media/audio/object/kk.mp3" type="audio/mp3"> </audio>
+	<audio id="kname" hidden="true" src="media/audio/name/kk.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var kproplay = document.getElementById("kpro");
+		  function Kpro() {kproplay.play();}
+
+	  	  var kobjplay = document.getElementById("kobj");
+		  function Kobj() {kobjplay.play();}
+
+		  var k = document.getElementById("kname");
+		  function K() {k.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#jj" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#ll" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of ll  -->
+<div data-role="page" id="ll" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Lpro()"></button><br><br>
+
+			<h3>Lamp</h3>
+
+			<img src="media/image/object/ll.png" onclick="Lobj()" style="width: 35%;" class="jellyrice"><br><br>
+
+			<img src="media/image/ll.png" onclick="L()" style="width:75%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="lpro" hidden="true" src="media/audio/pronounciation/ll.mp3" type="audio/mp3"> </audio>
+	<audio id="lobj" hidden="true" src="media/audio/object/ll.mp3" type="audio/mp3"> </audio>
+	<audio id="lname" hidden="true" src="media/audio/name/ll.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var lproplay = document.getElementById("lpro");
+		  function Lpro() {lproplay.play();}
+
+	  	  var lobjplay = document.getElementById("lobj");
+		  function Lobj() {lobjplay.play();}
+
+		  var l = document.getElementById("lname");
+		  function L() {l.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#kk" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#mm" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of mm  -->
+<div data-role="page" id="mm" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Mpro()"></button><br><br>
+
+			<h3>Man</h3>
+
+			<img src="media/image/object/mm.png" onclick="Mobj()" style="width: 35%;" class="jellyrice"><br><br>
+
+			<img src="media/image/mm.png" onclick="M()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="mpro" hidden="true" src="media/audio/pronounciation/mm.mp3" type="audio/mp3"> </audio>
+	<audio id="mobj" hidden="true" src="media/audio/object/mm.mp3" type="audio/mp3"> </audio>
+	<audio id="mname" hidden="true" src="media/audio/name/mm.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var mproplay = document.getElementById("mpro");
+		  function Mpro() {mproplay.play();}
+
+	  	  var mobjplay = document.getElementById("mobj");
+		  function Mobj() {mobjplay.play();}
+
+		  var m = document.getElementById("mname");
+		  function M() {m.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#ll" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#nn" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of nn  -->
+<div data-role="page" id="nn" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Npro()"></button><br><br>
+
+			<h3>Nail</h3>
+
+			<img src="media/image/object/nn.png" onclick="Nobj()" style="width: 35%;" class="jellyrice"><br><br>
+
+			<img src="media/image/nn.png" onclick="N()" style="width:95%;" >
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="npro" hidden="true" src="media/audio/pronounciation/nn.mp3" type="audio/mp3"> </audio>
+	<audio id="nobj" hidden="true" src="media/audio/object/nn.mp3" type="audio/mp3"> </audio>
+	<audio id="nname" hidden="true" src="media/audio/name/nn.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var nproplay = document.getElementById("npro");
+		  function Npro() {nproplay.play();}
+
+	  	  var nobjplay = document.getElementById("nobj");
+		  function Nobj() {nobjplay.play();}
+
+		  var n = document.getElementById("nname");
+		  function N() {n.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#mm" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#oo" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of oo  -->
+<div data-role="page" id="oo" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Opro()"></button><br><br>
+
+			<h3>Onion</h3>
+			<img src="media/image/object/oo.png" onclick="Oobj()" style="width:65%;" class="jellyrice"><br><br>
+
+			<img src="media/image/oo.png" onclick="O()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="opro" hidden="true" src="media/audio/pronounciation/oo.mp3" type="audio/mp3"> </audio>
+	<audio id="oobj" hidden="true" src="media/audio/object/oo.mp3" type="audio/mp3"> </audio>
+	<audio id="ooame" hidden="true" src="media/audio/name/oo.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var oproplay = document.getElementById("opro");
+		  function Opro() {oproplay.play();}
+
+	  	  var oobjplay = document.getElementById("oobj");
+		  function Oobj() {oobjplay.play();}
+
+		  var o = document.getElementById("ooame");
+		  function O() {o.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#nn" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#pp" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of pp  -->
+<div data-role="page" id="pp" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Ppro()"></button><br><br>
+
+			<h3>Pin</h3>
+
+			<img src="media/image/object/pp.png" onclick="Pobj()" style="width:95%;" class="jellyrice"><br><br>
+
+			<img src="media/image/pp.png" onclick="P()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="ppro" hidden="true" src="media/audio/pronounciation/pp.mp3" type="audio/mp3"> </audio>
+	<audio id="pobj" hidden="true" src="media/audio/object/pp.mp3" type="audio/mp3"> </audio>
+	<audio id="pname" hidden="true" src="media/audio/name/pp.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var pproplay = document.getElementById("ppro");
+		  function Ppro() {pproplay.play();}
+
+	  	  var pobjplay = document.getElementById("pobj");
+		  function Pobj() {pobjplay.play();}
+
+		  var p = document.getElementById("pname");
+		  function P() {p.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#oo" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#qq" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of qq  -->
+<div data-role="page" id="qq" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Qpro()"></button><br><br>
+
+			<h3>Queen</h3>
+
+			<img src="media/image/object/qq.png" onclick="Qobj()" style="width:40%;" class="jellyrice"><br><br>
+
+			<img src="media/image/qq.png" onclick="Q()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="qpro" hidden="true" src="media/audio/pronounciation/qq.mp3" type="audio/mp3"> </audio>
+	<audio id="qobj" hidden="true" src="media/audio/object/qq.mp3" type="audio/mp3"> </audio>
+	<audio id="qname" hidden="true" src="media/audio/name/qq.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var qproplay = document.getElementById("qpro");
+		  function Qpro() {qproplay.play();}
+
+	  	  var qobjplay = document.getElementById("qobj");
+		  function Qobj() {qobjplay.play();}
+
+		  var q = document.getElementById("qname");
+		  function Q() {q.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#pp" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#rr" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of rr  -->
+<div data-role="page" id="rr" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Rpro()"></button><br><br>
+
+			<h3>Rocket</h3>
+
+			<img src="media/image/object/rr.png" onclick="Robj()" style="width:40%;" class="jellyrice"><br><br>
+
+			<img src="media/image/rr.png" onclick="R()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="rpro" hidden="true" src="media/audio/pronounciation/rr.mp3" type="audio/mp3"> </audio>
+	<audio id="robj" hidden="true" src="media/audio/object/rr.mp3" type="audio/mp3"> </audio>
+	<audio id="rname" hidden="true" src="media/audio/name/rr.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var rproplay = document.getElementById("rpro");
+		  function Rpro() {rproplay.play();}
+
+	  	  var robjplay = document.getElementById("robj");
+		  function Robj() {robjplay.play();}
+
+		  var r = document.getElementById("rname");
+		  function R() {r.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#qq" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#ss" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of ss  -->
+<div data-role="page" id="ss" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Spro()"></button><br><br>
+
+			<h3>Sun</h3>
+
+			<img src="media/image/object/ss.png" onclick="Sobj()" style="width:60%;" class="jellyrice"><br><br>
+
+			<img src="media/image/ss.png" onclick="S()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="spro" hidden="true" src="media/audio/pronounciation/ss.mp3" type="audio/mp3"> </audio>
+	<audio id="sobj" hidden="true" src="media/audio/object/ss.mp3" type="audio/mp3"> </audio>
+	<audio id="sname" hidden="true" src="media/audio/name/ss.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var sproplay = document.getElementById("spro");
+		  function Spro() {sproplay.play();}
+
+	  	  var sobjplay = document.getElementById("sobj");
+		  function Sobj() {sobjplay.play();}
+
+		  var s = document.getElementById("sname");
+		  function S() {s.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#rr" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#tt" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of tt  -->
+<div data-role="page" id="tt" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Tpro()"></button><br><br>
+
+			<h3>Tree</h3>
+
+			<img src="media/image/object/tt.png" onclick="Tobj()" style="width:50%;" class="jellyrice"><br><br>
+
+			<img src="media/image/tt.png" onclick="T()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="tpro" hidden="true" src="media/audio/pronounciation/tt.mp3" type="audio/mp3"> </audio>
+	<audio id="tobj" hidden="true" src="media/audio/object/tt.mp3" type="audio/mp3"> </audio>
+	<audio id="tname" hidden="true" src="media/audio/name/tt.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var tproplay = document.getElementById("tpro");
+		  function Tpro() {tproplay.play();}
+
+	  	  var tobjplay = document.getElementById("tobj");
+		  function Tobj() {tobjplay.play();}
+
+		  var t = document.getElementById("tname");
+		  function T() {t.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#ss" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#uu" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of uu  -->
+<div data-role="page" id="uu" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Upro()"></button><br><br>
+
+			<h3>Unicorn</h3>
+
+			<img src="media/image/object/uu.png" onclick="Uobj()" style="width:80%;" class="jellyrice"><br><br>
+
+			<img src="media/image/uu.png" onclick="U()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="upro" hidden="true" src="media/audio/pronounciation/uu.mp3" type="audio/mp3"> </audio>
+	<audio id="uobj" hidden="true" src="media/audio/object/uu.mp3" type="audio/mp3"> </audio>
+	<audio id="uname" hidden="true" src="media/audio/name/uu.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var uproplay = document.getElementById("upro");
+		  function Upro() {uproplay.play();}
+
+	  	  var uobjplay = document.getElementById("uobj");
+		  function Uobj() {uobjplay.play();}
+
+		  var u = document.getElementById("uname");
+		  function U() {u.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#tt" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#vv" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of vv  -->
+<div data-role="page" id="vv" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Vpro()"></button><br><br>
+
+			<h3>Vase</h3>
+
+			<img src="media/image/object/vv.png" onclick="Vobj()" style="width:40%;" class="jellyrice"><br><br>
+
+			<img src="media/image/vv.png" onclick="V()" style="width:95%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="vpro" hidden="true" src="media/audio/pronounciation/vv.mp3" type="audio/mp3"> </audio>
+	<audio id="vobj" hidden="true" src="media/audio/object/vv.mp3" type="audio/mp3"> </audio>
+	<audio id="vname" hidden="true" src="media/audio/name/vv.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var vproplay = document.getElementById("vpro");
+		  function Vpro() {vproplay.play();}
+
+	  	  var vobjplay = document.getElementById("vobj");
+		  function Vobj() {vobjplay.play();}
+
+		  var v = document.getElementById("vname");
+		  function V() {v.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#uu" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#ww" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of ww  -->
+<div data-role="page" id="ww" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Wpro()"></button><br><br>
+
+			<h3>Woman</h3>
+
+			<img src="media/image/object/ww.png" onclick="Wobj()" style="width:50%;" class="jellyrice"><br><br>
+
+			<img src="media/image/ww.png" onclick="W()" style="width:100%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="wpro" hidden="true" src="media/audio/pronounciation/ww.mp3" type="audio/mp3"> </audio>
+	<audio id="wobj" hidden="true" src="media/audio/object/ww.mp3" type="audio/mp3"> </audio>
+	<audio id="wname" hidden="true" src="media/audio/name/ww.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var wproplay = document.getElementById("wpro");
+		  function Wpro() {wproplay.play();}
+
+	  	  var wobjplay = document.getElementById("wobj");
+		  function Wobj() {wobjplay.play();}
+
+		  var w = document.getElementById("wname");
+		  function W() {w.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#vv" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#xx" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of xx  -->
+<div data-role="page" id="xx" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Xpro()"></button><br><br>
+
+			<h3>X-ray</h3>
+
+			<img src="media/image/object/xx.png" onclick="Xobj()" style="width:60%;" class="jellyrice"><br><br>
+
+			<img src="media/image/xx.png" onclick="X()" style="width:100%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="xpro" hidden="true" src="media/audio/pronounciation/xx.mp3" type="audio/mp3"> </audio>
+	<audio id="xobj" hidden="true" src="media/audio/object/xx.mp3" type="audio/mp3"> </audio>
+	<audio id="xname" hidden="true" src="media/audio/name/xx.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var xproplay = document.getElementById("xpro");
+		  function Xpro() {xproplay.play();}
+
+	  	  var xobjplay = document.getElementById("xobj");
+		  function Xobj() {xobjplay.play();}
+
+		  var x = document.getElementById("xname");
+		  function X() {x.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#ww" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#yy" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of yy  -->
+<div data-role="page" id="yy" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Ypro()"></button><br><br>
+
+			<h3>Yacht</h3>
+
+			<img src="media/image/object/yy.png" onclick="Yobj()" style="width:80%;" class="jellyrice"><br><br>
+
+			<img src="media/image/yy.png" onclick="Y()" style="width:100%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="ypro" hidden="true" src="media/audio/pronounciation/yy.mp3" type="audio/mp3"> </audio>
+	<audio id="yobj" hidden="true" src="media/audio/object/yy.mp3" type="audio/mp3"> </audio>
+	<audio id="yname" hidden="true" src="media/audio/name/yy.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var yproplay = document.getElementById("ypro");
+		  function Ypro() {yproplay.play();}
+
+	  	  var yobjplay = document.getElementById("yobj");
+		  function Yobj() {yobjplay.play();}
+
+		  var y = document.getElementById("yname");
+		  function Y() {y.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#xx" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#zz" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of zz  -->
+<div data-role="page" id="zz" class="lala">
+
+	<div role="main" class="ui-content">
+
+		<center>
+
+			<button class="wut" onclick="Zpro()"></button><br><br>
+
+			<h3>Zipper</h3>
+
+			<img src="media/image/object/zz.png" onclick="Zobj()" style="width:50%;" class="jellyrice"><br><br>
+
+			<img src="media/image/zz.png" onclick="Z()" style="width:100%;">
+
+		</center>
+
+	</div>
+
+
+
+
+	<audio id="zpro" hidden="true" src="media/audio/pronounciation/zz.mp3" type="audio/mp3"> </audio>
+	<audio id="zobj" hidden="true" src="media/audio/object/zz.mp3" type="audio/mp3"> </audio>
+	<audio id="zname" hidden="true" src="media/audio/name/zz.mp3" type="audio/mp3"> </audio>
+
+
+	  <script>
+	  	  var zproplay = document.getElementById("zpro");
+		  function Zpro() {zproplay.play();}
+
+	  	  var zobjplay = document.getElementById("zobj");
+		  function Zobj() {zobjplay.play();}
+
+		  var z = document.getElementById("zname");
+		  function Z() {z.play();}
+	  </script> 
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+
+		<a href="#yy" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#main_menu" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px"> Home ⌂</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

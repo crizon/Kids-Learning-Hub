@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUIZ</title>
+
+
+
+
+
+<style type="text/css">
+	
+	input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; pointer-events: none}
+            
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+            html, body {margin: 0; height: 100%; overflow: hidden}
+
+</style>
+
+
+
+
+
+</head>
+<body style="background-image: url(bg.png);background-position: bottom; background-size: 100%">
+
+    <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="OSTdesu" volume="50%" autoplay loop src="quizmusic.mp3" type="audio/mp3"></audio> 
+
+		<button onclick="home()" style="position: fixed;left: 25px; top: 25px; border-radius: 25px; background-color: pink; padding: 5px"> <b> ⌂ <small> Home </small> </b> </button>
+		<script>
+				function home(){
+					document.location.assign('../index.html')
+				}
+		</script> 
+
+<center>
+	<iframe src="main.html" style="width: 800px; height: 600px; border: 5px ridge orange; border-radius: 15px;margin-top: 30px "></iframe>
+</center>
+
+</body>
+</html>

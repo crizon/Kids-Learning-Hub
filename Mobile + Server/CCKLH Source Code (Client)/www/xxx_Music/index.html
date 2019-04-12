@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>crzn.io</title>
+	<link rel="shortcut icon" href="media/image/favicon.ico">
+
+<link rel="stylesheet" href="../vendor/jquery.mobile-1.4.5.min.css" />
+
+<script src="../vendor/jquery-1.11.1.min.js"></script>
+<script src="../vendor/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../vendor/own.css">
+	<link rel="stylesheet" type="text/css" href="nums.css">
+
+	<style>
+					.texts {style="font-family: Arial;
+					font-style: none;
+					font-weight: bolder;
+					text-decoration: none;
+					text-transform: none;
+					color: white;
+					text-shadow: 0 0 0"}
+	</style>
+
+	<style type="text/css">
+						.main-bg{
+							background-image:url(media/image/main-bg.jpg);
+							background-size: 100%;
+						}
+
+
+						.feeter {
+							position: fixed;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+						}
+
+						.bgc{background: linear-gradient(135deg, rgba(250,151,135,1) 0%, rgba(247,247,121,1) 52%, rgba(133,190,255,1) 99%, rgba(133,190,255,1) 100%)}
+
+	</style>
+
+
+
+
+<style>
+img:active {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+
+
+
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+
+            </style>
+
+                        <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to return home?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  window.location = "../index.html";
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+          </script>
+
+
+
+
+
+
+
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+</head>
+
+<body class="main-bg" onload="musicplay(), onLoad()" >
+
+ <div class="se-pre-con"></div>
+
+	<audio id="bgm" loop="true" hidden="true" src="media/audio/BGMCL.mp3" type="audio/mp3"></audio> 
+	  <script>
+		  var crznbgm = document.getElementById("bgm");
+		  crznbgm.volume = 0.3;
+		  function musicplay() {crznbgm.play();}
+	  </script> 
+
+
+
+
+	<audio id="poot" hidden="true" src="../media/audio/poot.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crznpoot = document.getElementById("poot");
+		  function pootplay() {crznpoot.play();}
+	  </script> 
+
+
+
+<!-- Start of main page -->
+<div data-role="page" id="main_menu" class="main-bg" style="background: linear-gradient(135deg, rgba(250,151,135,1) 0%, rgba(247,247,121,1) 52%, rgba(133,190,255,1) 99%, rgba(133,190,255,1) 100%)">
+
+			
+				<div style="background-color: lightblue ;background-image: url(media/image/x.gif); background-position: center;background-repeat: no-repeat; position: fixed; width: 100%; background-size: 100%; box-shadow: 0px 6px 63px 6px rgba(0,200,255,.7);">
+					<center>
+					<h1 style="color: white;text-shadow:2px 1px 4px rgba(0,0,0,1);"> <b> MUSIC</b></h1>
+					</center>
+				</div>
+
+
+
+  
+
+		<center>
+
+
+
+				<div class="align-bottom" style="margin-top: 130px">
+
+
+					<img src="media/image/ifeel.png" width="90%" onclick="ifeelplay()">
+					<center>				
+						<h3>I Feel My Savior's Love</h3>
+						<button class="btn-info btn" 
+						data-toggle="modal" data-target="#ifeelL" data-backdrop="static" data-keyboard="false">☰ Show Lyrics</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+
+
+					<img src="media/image/ph.png" width="90%" onclick="phplay()">
+					<center>				
+						<h3>Lupang Hinirang</h3>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#phL" data-backdrop="static" data-keyboard="false">☰ Show Lyrics</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+		
+					<img src="media/image/fam.png" width="90%" onclick="famplay()">
+					<center>				
+						<h3>Finger Family</h3>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#famL" data-backdrop="static" data-keyboard="false">☰ Show Lyrics</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+					<img src="media/image/abc.png" width="90%" onclick="abcplay()">
+					<center>				
+						<h3>Alphabet Song</h3>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#abcL" data-backdrop="static" data-keyboard="false">☰ Show Lyrics</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+					<img src="media/image/baba.png" width="90%" onclick="babaplay()">
+					<center>				
+						<h3>Baa Baa Black Sheep</h3>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#babaL" data-backdrop="static" data-keyboard="false">☰ Show Lyrics</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+					<img src="media/image/star.png" width="90%" onclick="starplay()">
+					<center>				
+						<h4>Twinkle Twinkle Little Star</h4>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#starL" data-backdrop="static" data-keyboard="false">☰ Show Lyrics</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+
+					<img src="media/image/abzoo.png" width="90%" onclick="abzooplay()">
+					<center>				
+						<h4>ABZoo Soundtrack - crzn</h4>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#abzooL" data-backdrop="static" data-keyboard="false">☰ Show Info</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+					<img src="media/image/ssun.png" width="90%" onclick="ssunplay()">
+					<center>				
+						<h4>Saturday Sun - crzn</h4>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#ssunL" data-backdrop="static" data-keyboard="false">☰ Show Info</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+					<img src="media/image/tiny.png" width="90%" onclick="tinyplay()">
+					<center>				
+						<h4>Tiny Shimmering Splendid - crzn</h4>
+						<button class="btn-info btn"
+						data-toggle="modal" data-target="#tinyL" data-backdrop="static" data-keyboard="false">☰ Show Info</button>
+						<i style="opacity: 0">____</i>
+						<button onclick="stopall()" class="btn btn-danger">■ Stop</button>
+						<br><br><br>
+						<div style="border-top: 1px solid gray; width: 80%"></div>
+						<br><br><br>
+					</center>
+
+
+				</div><!-- /footer -->
+
+		</center>
+
+
+</div> <!-- /page -->
+
+
+
+
+
+
+
+
+
+
+	<audio id="ifeel" hidden="true" src="../media/audio/BGMCL.mp3" type="audio/mp3"> </audio>
+	<audio id="ph" hidden="true" src="../media/audio/phsong.mp3" type="audio/mp3"> </audio>
+	<audio id="fam" hidden="true" src="../media/audio/BGM_3.mp3" type="audio/mp3"> </audio>
+	<audio id="abc" hidden="true" src="../media/audio/BGM.mp3" type="audio/mp3"> </audio>
+	<audio id="baba" hidden="true" src="../media/audio/BGM_4.mp3" type="audio/mp3"> </audio>
+	<audio id="star" hidden="true" src="../media/audio/BGM_2.mp3" type="audio/mp3"> </audio>
+	<audio id="abzoo" hidden="true" src="../media/audio/ABZoo BGM.mp3" type="audio/mp3"> </audio>
+	<audio id="ssun" hidden="true" src="../media/audio/OST.mp3" type="audio/mp3"> </audio>
+	<audio id="tiny" hidden="true" src="../media/audio/tiny.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+		  var ifeel = document.getElementById("ifeel");
+		  var ph = document.getElementById("ph");
+		  var fam = document.getElementById("fam");
+		  var abc = document.getElementById("abc");
+		  var baba = document.getElementById("baba");
+		  var star = document.getElementById("star");
+		  var abzoo = document.getElementById("abzoo");
+		  var ssun = document.getElementById("ssun");
+		  var tiny = document.getElementById("tiny");
+
+
+		function ifeelplay(){
+				  ifeel.play();
+				  ph.load();
+				  fam.load();
+				  abc.load();
+				  baba.load();
+				  star.load();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.load();
+				}
+
+		function phplay(){
+				  ifeel.load();
+				  ph.play();
+				  fam.load();
+				  abc.load();
+				  baba.load();
+				  star.load();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.load();
+				}
+
+
+		function famplay(){
+				  ifeel.load();
+				  ph.load();
+				  fam.play();
+				  abc.load();
+				  baba.load();
+				  star.load();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.load();
+				}
+
+		function abcplay(){
+				  ifeel.load();
+				  ph.load();
+				  fam.load();
+				  abc.play();
+				  baba.load();
+				  star.load();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.load();
+				}
+
+		function babaplay(){
+				  ifeel.load();
+				  ph.load();
+				  fam.load();
+				  abc.load();
+				  baba.play();
+				  star.load();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.load();
+				}
+
+		function starplay(){
+				  ifeel.load();
+				  ph.load();
+				  fam.load();
+				  abc.load();
+				  baba.load();
+				  star.play();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.load();
+				}
+
+		function abzooplay(){
+				  ifeel.load();
+				  ph.load();
+				  fam.load();
+				  abc.load();
+				  baba.load();
+				  star.load();
+				  abzoo.play();
+				  ssun.load();
+				  tiny.load();
+				}
+
+		function ssunplay(){
+				  ifeel.load();
+				  ph.load();
+				  fam.load();
+				  abc.load();
+				  baba.load();
+				  star.load();
+				  abzoo.load();
+				  ssun.play();
+				  tiny.load();
+				}
+
+
+		function tinyplay(){
+				  ifeel.load();
+				  ph.load();
+				  fam.load();
+				  abc.load();
+				  baba.load();
+				  star.load();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.play();
+				}
+
+		function stopall(){
+				  ifeel.load();
+				  ph.load();
+				  fam.load();
+				  abc.load();
+				  baba.load();
+				  star.load();
+				  abzoo.load();
+				  ssun.load();
+				  tiny.load();
+				}
+
+
+	  </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  	<div class="modal fade" id="ifeelL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>I feel my Savior’s love
+						In all the world around me.
+						His Spirit warms my soul
+						Through ev’rything I see.
+						<br><br>
+						He knows I will follow him,
+						Give all my life to him.
+						I feel my Savior’s love,
+						The love he freely gives me.
+						</h5><br><br>
+
+
+						<h5> I feel my Savior’s love;
+						Its gentleness enfolds me,
+						And when I kneel to pray,
+						My heart is filled with peace.
+						<br><br>
+						He knows I will follow him,
+						Give all my life to him.
+						I feel my Savior’s love,
+						The love he freely gives me.
+						</h5><br><br>
+
+
+						<h5> I feel my Savior’s love
+						And know that he will bless me.
+						I offer him my heart;
+						My shepherd he will be.
+						<br><br>
+						He knows I will follow him,
+						Give all my life to him.
+						I feel my Savior’s love,
+						The love he freely gives me.
+						</h5><br><br>
+
+
+						<h5> I’ll share my Savior’s love
+						By serving others freely.
+						In serving I am blessed.
+						In giving I receive.
+						<br><br>
+						He knows I will follow him,
+						Give all my life to him.
+						I feel my Savior’s love,
+						The love he freely gives me.
+						</h5><br><br>
+
+						<i> © The Church of Jesus Christ of Latter-day Saints</i><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+
+
+
+
+	  	<div class="modal fade" id="phL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+							Bayang Magiliw<br><br>
+							Perlas ng silanganan<br><br>
+							Alab ng puso, sa dibdib mo'y buhay<br><br>
+							Lupang hinirang, duyan ka ng magiting<br><br>
+							Sa manlulupig, di ka pasisiil<br><br>
+							Sa dagat at bundok,<br><br>
+							Sa simoy at sa langit mong bughaw<br><br>
+							May dilag ang tula at awit sa paglayang minamahal<br><br>
+							Ang kislap ng watawat mo'y tagumpay na nagniningning<br><br>
+							Ang bituin at araw niyang kalian pa may di magdidilim<br><br>
+							Lupa ng araw ng walhatit pagsinta<br><br>
+							Buhay ay langit sa piling mo<br><br>
+							Aming ligaya ng pag may mang-aapi<br><br>
+							Ang mamatay ng dahil sa iyo.<br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+
+
+
+	  	<div class="modal fade" id="famL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+							Daddy finger, daddy finger, where are you? <br>
+							Here I am, here I am<br>
+							How do you do?<br><br>
+							Mommy finger, mommy finger, where are you? <br>
+							Here I am, here I am<br>
+							How do you do?<br><br>
+							Brother finger, brother finger, where are you? <br>
+							Here I am, here I am<br>
+							How do you do?<br><br>
+							Sister finger, sister finger, where are you? <br>
+							Here I am, here I am<br>
+							How do you do?<br><br>
+							Baby finger, baby finger, where are you? <br>
+							Here I am, here I am<br>
+							How do you do?<br><br>
+
+							<i> © www.singing-bell.com</i><br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+
+
+
+	  	<div class="modal fade" id="abcL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+							A - B - C - D - E - F - G<br>
+							H - I - J - K - L - M - N - O - P<br>
+							Q - R - S - T - U- V,<br>
+							W - X - Y and Z<br><br>
+
+							Now I know my ABC's<br>
+							Next time won't you sing with me.<br><br>
+
+
+							<i> © www.singing-bell.com</i><br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+
+
+
+
+
+		<div class="modal fade" id="babaL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+							Baa, baa, black sheep, have you any wool?<br>
+							Yes sir, yes sir, three bags full!<br><br>
+
+							One for the master,<br>
+							One for the dame,<br>
+							And one for the little boy<br>
+							Who lives down the lane<br><br>
+
+							Baa, baa, black sheep,<br>
+							Have you any wool?<br>
+							Yes sir, yes sir,<br>
+							Three bags full...<br><br>
+
+							<i> © www.singing-bell.com</i><br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+
+
+
+
+
+		<div class="modal fade" id="starL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+
+							Twinkle, twinkle, little star, <br>
+							How I wonder what you are. <br>
+							Up above the world so high, <br>
+							Like a diamond in the sky. <br><br>
+
+							When the blazing sun is gone, <br>
+							When he nothing shines upon, <br>
+							Then you show your little light, <br>
+							Twinkle, twinkle, all the night. <br><br>
+
+							Then the traveler in the dark, <br>
+							Thanks you for your tiny spark, <br>
+							He could not see which way to go, <br>
+							If you did not twinkle so. <br><br>
+
+							In the dark blue sky you keep, <br>
+							And often through my curtains peep, <br>
+							For you never shut your eye, <br>
+							Till the sun is in the sky. <br><br>
+
+							As your bright and tiny spark, <br>
+							Lights the traveler in the dark. <br>
+							Though I know not what you are, <br>
+							Twinkle, twinkle, little star. <br><br>
+
+							Twinkle, twinkle, little star. <br>
+							How I wonder what you are. <br>
+							Up above the world so high, <br>
+							Like a diamond in the sky. <br><br>
+
+							Twinkle, twinkle, little star. <br>
+							How I wonder what you are. <br>
+							How I wonder what you are.<br><br>
+
+							<i> © www.singing-bell.com</i><br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+		<div class="modal fade" id="abzooL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+
+				<h3>			ABZoo OST <br><br></h3>
+							<i style="font-size: small;"> Composed by </i> <br>
+							Crizon Entolezo Parcia Junior <br><br>
+
+							<i style="font-size: small;"> Produced by </i> <br>
+
+							© 2018 | NozircRecords <br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+		<div class="modal fade" id="ssunL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+
+							<h3>Saturday Sun <br><br></h3>
+							<i style="font-size: small;"> Composed by </i> <br>
+							Crizon Entolezo Parcia Junior <br><br>
+
+							<i style="font-size: small;"> Produced by </i> <br>
+
+							© 2018 | NozircRecords <br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+		<div class="modal fade" id="tinyL" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+						<h5>
+
+							<h3>Tiny Shimmering Splendid<br><br></h3>
+							<i style="font-size: small;"> Composed by </i> <br>
+							Crizon Entolezo Parcia Junior <br><br>
+
+							<i style="font-size: small;"> Produced by </i> <br>
+
+							© 2018 | NozircRecords <br><br>
+
+						</h5><br><br>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black; width:  50px;height:  50px">
+			              ✔
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

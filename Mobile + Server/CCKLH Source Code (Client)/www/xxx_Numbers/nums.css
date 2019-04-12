@@ -1,0 +1,72 @@
+.circle1{width:150px;height: 150px;background-color: hotpink;color: white;font-size: 100px; border-radius: 50%; text-align: middle;border: 3px dotted black;font-family: Comic Sans MS, cursive, sans-serif;}
+
+.circle1:active{width:150px;height: 150px;background-color: hotpink;color: white;font-size: 80px; border-radius: 50%;font-family: Comic Sans MS, cursive, sans-serif; 
+	text-align: middle;box-shadow: 0px 0px 16px 13px rgba(240,0,0,1);}
+
+
+
+
+.box2{background-color: yellow; color: white; font-size: 50px; text-align:center; border-radius: 50%; border: 3px dashed black;font-family: Comic Sans MS, cursive, sans-serif;}
+
+.box2:active{background-color: yellow; color: white; font-size: 40px; text-align:center; border-radius: 50%
+;box-shadow: 0px 0px 16px 13px rgba(255,234,0,1);font-family: Comic Sans MS, cursive, sans-serif;}
+
+
+
+
+.box3{background-color: purple; color: white; font-size: 50px; text-align:center; border-radius: 25%;border: 3px dotted black;font-family: Comic Sans MS, cursive, sans-serif;}
+
+.box3:active{background-color: purple; color: white; font-size: 40px; text-align:center; border-radius: 50%
+;box-shadow: 0px 0px 16px 13px rgba(183,0,255,1);font-family: Comic Sans MS, cursive, sans-serif;}
+
+
+
+.box4{background-color: green; color: white; font-size: 50px; text-align:center; border-radius: 75px; border: 3px dashed black;font-family: Comic Sans MS, cursive, sans-serif;}
+
+.box4:active{background-color: green; color: white; font-size: 40px; text-align:center;border-radius: 75px
+;box-shadow: 0px 0px 15px 12px rgba(13,255,0,1);font-family: Comic Sans MS, cursive, sans-serif;}
+
+
+
+
+
+.box5{background-color: blue; color: white; font-size: 50px; text-align:center; border-radius: 100%;border: 3px dotted black;font-family: Comic Sans MS, cursive, sans-serif;}
+
+.box5:active{background-color: blue color: white; font-size: 40px; text-align:center;border-radius: 100%
+;box-shadow: 0px 0px 15px 12px rgba(0,187,255,1);font-family: Comic Sans MS, cursive, sans-serif;}
+
+
+
+
+.box6{background-color: #1ce69c; color: white; font-size: 50px; text-align:center; border: 3px dashed black;font-family: Comic Sans MS, cursive, sans-serif;}
+
+.box6:active{background-color: #1ce69c; color: white; font-size: 40px; text-align:center;font-family: Comic Sans MS, cursive, sans-serif;
+;box-shadow: 0px 0px 15px 12px rgba(255,234,0,1);}
+
+
+
+
+.box7{background-color: #465394; color: white; font-size: 50px; text-align:center; border: 3px dotted black;font-family: Comic Sans MS, cursive, sans-serif; border-radius: 35px}
+
+.box7:active{background-color: #465394; color: white; font-size: 40px; text-align:center;font-family: Comic Sans MS, cursive, sans-serif;border-radius: 35px;
+;box-shadow: 0px 0px 15px 12px rgba(224,78,166,1);}
+
+
+
+
+.box8{background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); color: white; font-size: 50px; text-align:center; border: 3px dashed black;font-family: Comic Sans MS, cursive, sans-serif; border-radius: 25px}
+
+.box8:active{background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%); color: white; font-size: 40px; text-align:center;font-family: Comic Sans MS, cursive, sans-serif;
+;box-shadow: 0px 0px 15px 12px rgba(222,196,29,1);border-radius: 25px}
+
+
+.box9{background: linear-gradient(to right, rgba(169,3,41,1) 0%, rgba(109,0,25,1) 100%); color: white; font-size: 50px; text-align:center; border: 3px dotted black;font-family: Comic Sans MS, cursive, sans-serif; border-radius: 100%}
+
+.box9:active{background: linear-gradient(to right, rgba(169,3,41,1) 0%, rgba(109,0,25,1) 100%);color: white; font-size: 40px; text-align:center;font-family: Comic Sans MS, cursive, sans-serif;
+;box-shadow: 0px 0px 15px 12px rgba(212,31,222,1);border-radius: 100%}
+
+
+.box10{background: linear-gradient(to right, rgba(252,234,187,1) 0%, rgba(251,223,147,1) 100%); color: white; font-size: 50px; text-align:center; border: 3px dashed black;font-family: Comic Sans MS, cursive, sans-serif; border-radius: 25px}
+
+.box10:active{background: linear-gradient(to right, rgba(252,234,187,1) 0%, rgba(251,223,147,1) 100%); color: white; font-size: 40px; text-align:center;font-family: Comic Sans MS, cursive, sans-serif;
+;box-shadow: 0px 0px 15px 12px rgba(31,222,120,1);border-radius: 25px}

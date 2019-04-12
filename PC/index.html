@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kid's Learning Hub</title>
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+  <link rel="icon" href="../icon.png">
+
+  
+
+  <link rel="stylesheet" href="vendor/jquery.mobile-1.4.5.min.css" />
+  <script src="vendor/jquery-1.11.1.min.js"></script>
+  <script src="vendor/jquery.mobile-1.4.5.min.js"></script>
+
+  
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="vendor/own.css">
+
+  <link rel="stylesheet" type="text/css" href="vendor/fontello.css">
+
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href="vendor/elusive-icons.css">
+
+
+
+
+
+
+
+
+
+
+          <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to exit application?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  navigator.app.exitApp();
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+
+
+          </script>
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+
+            ::-webkit-scrollbar { display: none; }
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none;}
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+                html, body {margin: 0; height: 100%; overflow: hidden}
+
+
+            </style>
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+
+
+
+
+
+</head>
+
+
+<body onload=" onLoad()" style="background-image: radial-gradient(circle, #ffc335,#ffc335, #ff9271, #ff7dbe, #c88ff9, #00a1ff);">
+
+    <iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="OSTdesu" volume="50%" autoplay loop src="media/audio/OST.mp3" type="audio/mp3"></audio> 
+
+
+
+<div class="se-pre-con"></div> 
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<center> <img draggable="false"  draggable="false"  src="media/image/bulb.png" width="40%" class="bootboot"> </center>
+
+
+
+
+
+  <audio id="poot" hidden="true" src="media/audio/poot.mp3"> </audio>
+
+  <audio id="toop" hidden="true" src="media/audio/toop.mp3"> </audio>
+
+    <script>
+      var crznpoot = document.getElementById("poot");
+      function pootplay() {crznpoot.play();}
+
+    </script> 
+   <script>
+      var crzntoop = document.getElementById("toop");
+      function toopplay() {crzntoop.play();}
+
+    </script> 
+
+
+
+
+
+
+
+<div data-role="page" id="landing_page" style=" overflow: hidden; background-image: url(media/image/bobo.png);background-position: bottom; background-size: 100%">
+
+
+
+  <div style="padding: 20px; padding-top: 60px">
+    <center>
+        <img draggable="false"  draggable="false"  src="media/image/logodesu.png" style="width: 40%" class="bootboot">
+    </center>
+  </div>
+  
+  
+
+<center>
+    <div class="row" style="bottom: 20px; position: fixed; width: 100%">
+
+      <div style="width: 17.5%"></div>
+
+      <a href="#slide_view" data-transition="pop" style="text-decoration: none; width:20%" onclick="pootplay()"> <button class="nxt" style=" width: 100%; color: white"> <i class="icon-book" style="color: rgb(0,161,255);"></i> <b> Lessons </b> </button></a>
+      
+      <div style="width: 2.5%"></div>
+
+     <!--  <a href="xxx_Quiz/index.html" rel="external" style="text-decoration: none; width:20%" onclick="pootplay()"> <button class="nxt" style="width: 100%;color: white"> <i class="icon-soccer-ball" style="color: rgb(0,161,255);"></i> <b> Quiz </b> </button></a> -->
+
+     <a href="xxx_Quiz/index.html" rel="external" style="text-decoration: none; width:20%" onclick="pootplay()"> <button class="nxt" style="width: 100%;color: white"> <i class="icon-soccer-ball" style="color: rgb(0,161,255);"></i> <b> Quiz </b> </button></a>
+ 
+      <div style="width: 2.5%"></div>
+
+      <button data-toggle="modal" data-target="#about_modal" data-backdrop="static" class="nxt " style="width: 20%;color: white" onclick="pootplay()"> <i class="icon-gamepad" style="color: rgb(0,161,255);"></i> <b> About </b> </button>
+
+      <div style="width: 17.5%"></div>
+
+    </div>
+</center>
+
+
+
+
+</div>
+ 
+<!-- <script>
+  function ows(){
+    window.open('XXX_Quiz/index.html', 'Quiz', 'nodeIntegration')
+  }
+</script> -->
+
+
+
+
+
+
+<style type="text/css">
+
+  .feeter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+            }
+
+.wrapper {
+  overflow: hidden;
+}
+
+.sliding-background {
+  background: url("x.png") repeat-x;
+  height: 1000px;
+  width: 2368px;
+  animation: slide 60s linear infinite;
+
+}
+
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1000px, 0, 0);
+  }
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SLIDE VIEW --------------------------------------------------------------------------------------------------------------- -->
+
+<div data-role="page" id="slide_view"  style="background-image: url('media/image/bgp.png'); background-size: 100%; background-position: bottom"> 
+
+
+
+
+  <div class="row" style="background: #ffc335;margin-left: 0px; padding: 5px; height: 45px">
+
+            <button class="btn-info btn"  onclick="openNav(), pootplay()"  style="padding: 1px; background-color: rgb(0,161,255);left: 5px; position: fixed;">
+              <img draggable="false"  draggable="false"  src="media/image/xxx.png" style="border: none">
+            </button>
+
+            <center>
+              <a class="navbar-brand" href="#landing_page" style="position: fixed;left: 550px; color: white; font-weight: bolder; font-size: 22px" onclick="closeNav(),pootplay()"> <b> Kid's Learning Hub </b></a>
+            </center>
+
+        
+
+        <a href="#thumbnail_view" data-transition="fade" onclick="toopplay() , closeNav()" >
+            <button class="btn-info btn"  style="padding: 1px; background-color: background-image: linear-gradient(to right, #3EC8AC 0%, #4E90A4 100%), linear-gradient(to right, #3EC8AC 0%, #4E90A4 100%);right: 5px; position: fixed;">
+              <img draggable="false"  draggable="false"  src="media/image/x.png" style="border: none"> 
+            </button>
+        </a>      
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+<div id="mySidenav" class="sidenav" style="background-image: linear-gradient(to bottom, #ffc335,#ffc335, #ff9271, #ff7dbe, #c88ff9, #00a1ff);">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav(), toopplay()" >✖</a>
+<center>
+<img draggable="false"  draggable="false"  src="media/image/logodesu.png" width="90%">
+</center>
+                <a href="#landing_page" style="font-weight: bolder; color: white ;" onclick="closeNav(),pootplay()"><i class="icon-home" style="color: rgb(0,161,255);"></i> Home </a>
+                <a href="#about" style=" font-weight: bolder; color: white ;" onclick="closeNav(),pootplay()"><i class="icon-gamepad" style="color: rgb(0,161,255);"></i> About </a>
+              
+
+
+              
+                <center>
+              <div class="dropdown-divider" style="width: 90%;"></div>
+                </center>
+
+                  
+                  <input onkeyup="myFunction()" id="myInput" placeholder="   Search Lessons" class=" " type="text" style=" padding: 5px; border-radius: 15px; width: 90%;margin: 10px; border-color: gold" data-toggle="collapse" data-target="#Lessons">
+
+                    <div id="Lessons" class="collapse">
+                        
+                          <ul id="myUL">
+
+                              <li><a onclick="pootplay()" href="xxx_Alphabet/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Alphabet</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_ABZoo/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter" >ABZoo</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Numbers/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter" >Numbers</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Colors/index.html" rel="external" style="height: 50%; width: 50%;color: white; font-weight: lighter; text-decoration: none">Colors</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Shapes/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Shapes</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Family/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Family</a></li>
+                   
+                              <li><a onclick="pootplay()" href="xxx_Christian/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter;text-decoration: none">Christian Living</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Music/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Music</a></li>
+
+                          </ul>
+
+                    </div>
+
+                                <script type="text/javascript">
+                                                    function myFunction() {
+                                    var input, filter, ul, li, a, i;
+                                    input = document.getElementById("myInput");
+                                    filter = input.value.toUpperCase();
+                                    ul = document.getElementById("myUL");
+                                    li = ul.getElementsByTagName("li");
+                                    for (i = 0; i < li.length; i++) {
+                                        a = li[i].getElementsByTagName("a")[0];
+                                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                            li[i].style.display = "";
+                                        } else {
+                                            li[i].style.display = "none";
+                                        }
+                                    }
+                                }
+                                </script>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="300000" style="margin-top: 20px;">
+
+<center>
+  <div class="carousel-inner" style=" width: 550px; border-radius: 50%; border: 15px double #ffc335">
+
+
+    <div class="carousel-item active"> <a href="xxx_Alphabet/index.html" rel="external">    
+        <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/alphabet.png" onclick="closeNav()"> 
+        </a>     
+    </div>
+
+
+    <div class="carousel-item"> <a href="xxx_ABZoo/index.html" rel="external">   
+        <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/abzoo.png" onclick="closeNav()">
+        </a>      
+    </div>
+
+
+    <div class="carousel-item"> <a href="xxx_Numbers/index.html" rel="external">
+        <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/numbers.png" onclick="closeNav()">
+      </a>
+    </div>
+
+
+    <div class="carousel-item"> <a href="xxx_Colors/index.html" rel="external">
+        <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/colors.png" onclick="closeNav()">
+      </a>
+    </div>
+
+
+    <div class="carousel-item"> <a href="xxx_Shapes/index.html" rel="external"> 
+        <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/shapes.png" onclick="closeNav()"> 
+      </a>
+    </div>
+
+
+     <div class="carousel-item"> <a href="xxx_Family/index.html" rel="external">
+          <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/family.png" onclick="closeNav()">
+        </a>
+    </div>
+
+
+    <div class="carousel-item"> <a href="xxx_Christian/index.html" rel="external">
+        <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/christian.png" onclick="closeNav()">
+      </a>
+    </div>
+
+
+    <div class="carousel-item"> <a href="xxx_Music/index.html" rel="external">
+        <img draggable="false"  draggable="false"  class="d-block w-100 jello bootboot" src="media/image/music.png"  onclick="closeNav()">
+      </a>
+    </div>
+
+
+<style type="text/css">
+  .carousel-indicators {
+  bottom: -10px; opacity: .5
+}
+</style>
+
+  <ol class="carousel-indicators" style="z-index: 1">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" style="height: 15px; width: 15px; border-radius: 50%" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1" style="height: 15px; width: 15px; border-radius: 50%"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2" style="height: 15px; width: 15px; border-radius: 50%"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3" style="height: 15px; width: 15px; border-radius: 50%"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4" style="height: 15px; width: 15px; border-radius: 50%"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5" style="height: 15px; width: 15px; border-radius: 50%"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6" style="height: 15px; width: 15px; border-radius: 50%"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="7" style="height: 15px; width: 15px; border-radius: 50%"></li>
+  </ol>
+
+  </div>
+  </center>
+
+
+
+
+
+
+
+<!-- //   SWIPE FUNCTION SANA, KAYA LANG NADIDISABLE YUNG ONCLICK FUNCTION NG ICONS. -->
+
+<script type="text/javascript" src="vendor/hoho.js"></script>
+
+<script type="text/javascript">
+  
+  $(".carousel").swipe({
+
+  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+
+    if (direction == 'left') $(this).carousel('next');
+    if (direction == 'right') $(this).carousel('prev');
+
+  },
+  allowPageScroll:"vertical"
+
+});
+
+</script>
+
+
+
+
+
+
+
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" onclick="pootplay()">
+    <img draggable="false"  draggable="false"  src="media/image/lef.png">
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" onclick="pootplay()">
+   <img draggable="false"  draggable="false"  src="media/image/ryt.png">
+  </a>
+</div>
+
+
+
+      <div style="overflow: hidden;margin-bottom: -150px">
+        <img draggable="false"  draggable="false"  class="water-back" src="media/image/water-back.png" style="width: 120%;margin-bottom: -70px">
+        <img draggable="false"  draggable="false"  class="water-front" src="media/image/water-front.png" style="width: 120%;margin-bottom: -70px;">
+      </div>
+
+</div>
+  
+
+
+
+<div data-role="page" id="try" style="overflow: hidden; background-color: gray;"> 
+
+        <img draggable="false"  draggable="false"  class="water-back" src="media/image/water-back.png" style="width: 120%">
+        <img draggable="false"  draggable="false"  class="water-front" src="media/image/water-front.png" style="width: 120%">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- THUMBNAIL VIEW --------------------------------------------------------------------------------------------------------------- -->
+
+
+
+<div data-role="page" id="thumbnail_view" style="background-image: url('media/image/bgp.png'); background-size: 100%; background-position: bottom">
+
+
+  <div class="row" style="background: #ffc335; padding: 5px; margin-left: 0; height: 45px">
+
+            <button class="btn-info btn"  onclick="openNav2(), pootplay()"  style="padding: 1px; background-color: rgb(0,161,255);left: 5px; position: fixed">
+              <img draggable="false"  draggable="false"  src="media/image/xxx.png" style="border: none">
+            </button>
+
+            <center>
+             <a class="navbar-brand" href="#landing_page" style="color: white; font-weight: bolder; font-size: 22px; position: fixed; left: 550px" onclick="closeNav2(),pootplay()"> <b> Kid's Learning Hub </b></a>
+            </center>
+        
+
+        <a href="#slide_view" data-transition="fade" onclick="toopplay() , closeNav2()">
+            <button class="btn-info btn"  style="padding: 1px; background-color: rgb(0,161,255); position: fixed; right: 5px">
+              <img draggable="false"  draggable="false"  src="media/image/xx.png" style="border: none"> 
+            </button>
+        </a>      
+
+  </div>
+
+
+
+
+
+
+
+<br><br><br>
+
+<center>
+
+            <img draggable="false"  src="media/image/alphabet.png" class="damnit" style="width: 20%"  onclick="closeNav2(), link1()">
+          
+            <img draggable="false"  src="media/image/abzoo.png" class="damnit"  style="width: 20%" onclick="closeNav2(), link2()">
+          
+            <img draggable="false"  src="media/image/numbers.png" class="damnit"  style="width: 20%" onclick="closeNav2(), link3()">
+
+            <img draggable="false"  src="media/image/colors.png" class="damnit"  style="width: 20% " onclick="closeNav2(), link4()">
+          
+            <img draggable="false"  src="media/image/shapes.png" class="damnit"  style="width: 20%" onclick="closeNav2(), link5()">
+          
+            <img draggable="false"  src="media/image/family.png" class="damnit"  style="width: 20%" onclick=" closeNav2(), link6()">
+
+            <img draggable="false"  src="media/image/christian.png" class="damnit"  style="width: 20%" onclick="closeNav2(), link7()">
+          
+            <img draggable="false"  src="media/image/music.png" class="damnit"  style="width: 20%" onclick="closeNav2(), link8()">
+      	
+
+</center>
+
+
+
+
+
+
+<style type="text/css">
+  .damnit:hover{border: 5px solid turquoise; border-radius: 50%}
+</style>
+
+
+
+
+
+
+
+
+<script>
+function openNav2() {
+    document.getElementById("mySidenav2").style.width = "250px";
+}
+
+function closeNav2() {
+    document.getElementById("mySidenav2").style.width = "0";
+}
+
+
+
+function link1(){
+  document.location.assign('xxx_Alphabet/index.html');  
+}
+
+function link2(){
+  document.location.assign('xxx_ABZoo/index.html');  
+}
+
+function link3(){
+  document.location.assign('xxx_Numbers/index.html');  
+}
+
+function link4(){
+  document.location.assign('xxx_Colors/index.html');  
+}
+
+function link5(){
+  document.location.assign('xxx_Shapes/index.html');  
+}
+
+function link6(){
+  document.location.assign('xxx_Family/index.html');  
+}
+
+function link7(){
+  document.location.assign('xxx_Christian/index.html');  
+}
+
+function link8(){
+  document.location.assign('xxx_Music/index.html');  
+}
+
+
+
+</script>
+
+
+<div id="mySidenav2" class="sidenav" style="background-image: linear-gradient(to bottom, #ffc335,#ffc335, #ff9271, #ff7dbe, #c88ff9, #00a1ff);">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2(), toopplay()">✖</a>
+  <center>
+<img draggable="false"  draggable="false"  src="media/image/logodesu.png" width="90%">
+</center>
+
+
+                <a href="#landing_page" style="font-weight: bolder; color: white ;" onclick="closeNav2(),pootplay()"><i class="icon-home" style="color: rgb(0,161,255);"></i> Home </a>
+                <a href="#about" style=" font-weight: bolder; color: white ;" onclick="closeNav2(),pootplay()"><i class="icon-gamepad" style="color: rgb(0,161,255);"></i> About </a>
+              
+
+
+              
+                <center>
+              <div class="dropdown-divider" style="width: 90%;"></div>
+                </center>
+
+                  
+                  <input onkeyup="myFunction2()" id="myInput2" placeholder="   Search Lessons" class=" " type="text" style=" padding: 5px; border-radius: 15px; width: 90%;margin: 10px; border-color: gold" data-toggle="collapse" data-target="#Lessons2">
+
+                    <div id="Lessons2" class="collapse">
+                        
+                          <ul id="myUL2">
+
+                              <li><a onclick="pootplay()" href="xxx_Alphabet/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Alphabet</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_ABZoo/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter" >ABZoo</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Numbers/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter" >Numbers</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Colors/index.html" rel="external" style="height: 50%; width: 50%;color: white; font-weight: lighter; text-decoration: none">Colors</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Shapes/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Shapes</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Family/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Family</a></li>
+                   
+                              <li><a onclick="pootplay()" href="xxx_Christian/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter;text-decoration: none">Christian Living</a></li>
+
+                              <li><a onclick="pootplay()" href="xxx_Music/index.html" rel="external" style="height: 50%; width: 50% ;color: white; font-weight: lighter; text-decoration: none">Music</a></li>
+
+                          </ul>
+
+                    </div>
+
+                                <script type="text/javascript">
+                                                    function myFunction2() {
+                                    var input, filter, ul, li, a, i;
+                                    input = document.getElementById("myInput2");
+                                    filter = input.value.toUpperCase();
+                                    ul = document.getElementById("myUL2");
+                                    li = ul.getElementsByTagName("li");
+                                    for (i = 0; i < li.length; i++) {
+                                        a = li[i].getElementsByTagName("a")[0];
+                                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                            li[i].style.display = "";
+                                        } else {
+                                            li[i].style.display = "none";
+                                        }
+                                    }
+                                }
+                                </script>
+
+
+
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- MODAL FOR REFERENCES -->
+
+
+
+<div class="modal fade" id="about_modal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" style="border-radius: 25px">
+<div class="modal-dialog modal-lg" role="document" style="border-radius: 25px">
+<div class="modal-content" style="border-radius: 25px">
+<div class="modal-body" style="border: 5px ridge rgba(200,150,234,.5); border-radius: 25px; padding: 2px; background-color: black">
+
+
+
+<div style="background-color: #581683; border-radius: 25px">
+
+
+
+
+    <div class="container" >
+
+      <!-- Introduction Row -->
+     
+      <div >
+         <img draggable="false"  draggable="false"  src="media/image/logodesu.png" width="100%"  >
+        <br><br>
+     </div>
+
+
+      <p style="color: white;font-size: 15pt">
+
+        The Kid's Learning Hub is an application made for young people to learn the basic lessons in an interactive way. It's like an interactive flash cards. It includes awesome graphics and audio that will capture the interest of the audiences.
+
+        <br><br>
+
+        The developers are students of College of Computer Studies, Columban College, Olongapo City, Philippines. This app is a project for our subject "System Analysis and Design".
+        
+        <br><br>
+
+        We made this with the inspiration of helping young children learn in a fun way. Originally the app is produced for mobile devices so they can enjoy it even if they aren't at school. The original title of this app is Columban College Kids Learning Hub (CCKLH).</p>
+
+      <div class="row">
+
+<center>
+
+        <div class="text-center" style="background-color: #00C9A7; padding: 20px; color: white; width: 97%; margin-bottom:5px">
+          <img draggable="false"  draggable="false"  class="rounded-circle img-fluid d-block mx-auto jellyrice"  src="media/image/creds/parcia.gif" style=" margin: 10px; border: 3px dashed white">
+          <h3>Crizon E. Parcia Jr. <br>
+            <small>Programmer</small>
+          </h3>
+          <a onclick="linkdesu()" style="color: darkblue">www.crzn.online</a>
+
+        </div>
+
+
+        <div class="text-center" style="background-color: #FF6F91; padding: 20px; color: white; width: 97%; margin-bottom:5px">
+          <img draggable="false"  draggable="false"  class="rounded-circle img-fluid d-block mx-auto jellyrice" src="media/image/creds/echon.gif" style=" margin: 10px; border: 3px dashed white">
+          <h3>Chardine Echon
+            <br>
+            <small>Documenter </small>
+          </h3>
+          <p href="http://www.chardstride.space" rel="external" style="color: darkblue">www.chardstride.space</p>
+        </div>
+
+
+        <div class="text-center" style="background-color:#FF9671; padding: 20px; color: white; width: 97%; margin-bottom:5px">
+          <img draggable="false"  draggable="false"  class="rounded-circle img-fluid d-block mx-auto jellyrice"  src="media/image/creds/mila.gif" style=" margin: 10px; border: 3px dashed white">
+          <h3>Milcah Mila
+            <br>
+            <small>Illustrator</small>
+          </h3>
+          <p href="http://www.mlchmla.com" rel="external" style="color: darkblue">www.mlchmla.com</p>
+        </div>
+
+
+
+       <div  style="background-color: rgba(5,5,5,.6);padding:20px; margin-bottom:5px"> 
+          <i style="color: white">We would also like to give credits and extend our gratitude to the following people who helped us is making this project:</i>
+        </div>
+
+
+
+        <div class="text-center" style="background-color: skyblue; padding: 20px;width: 100%; color: white; width: 97%; margin-bottom:5px">
+          <img draggable="false"  draggable="false"  class="rounded-circle img-fluid d-block mx-auto jellyrice" src="media/image/creds/tapado.gif" style=" margin: 10px; border: 3px dashed white">
+          <h3>Ms. Gemma Tapado
+            <br>
+            <small>Adviser</small>
+          </h3>
+        </div>
+
+
+        <div class="text-center" style="background-color: salmon; padding: 20px;width: 100%; color: white; width: 97%; margin-bottom:5px">
+          <img draggable="false"  draggable="false"  class="rounded-circle img-fluid d-block mx-auto jellyrice" src="media/image/creds/ciapar.jpg" style=" margin: 10px; border: 3px dashed white">
+          <h3>Mrs. Rowena E. Parcia
+            <br>
+            <small>Mentor | Kinder Tacher GHIIES</small>
+          </h3>
+        </div>
+
+
+        <div class="text-center"  style="background-color: #FFC75F; padding: 20px; color: white; width: 97%; margin-bottom:5px">
+          <img draggable="false"  draggable="false"  class="rounded-circle img-fluid d-block mx-auto jellyrice" src="media/image/creds/eduvane.gif" style=" margin: 10px; border: 3px dashed white">
+          <h3>Frenole Verse Eduvane
+            <br>
+            <small>Illustrator of ABZoo</small>
+          </h3>
+          <p href="http://www.furinoru.com" rel="external" style="color: darkblue">www.furinoru.com</p>
+        </div>
+
+
+        <div class="text-center"  style="background-color: #55F686; padding: 20px; color: white; width: 97%; margin-bottom:5px">
+          <img draggable="false"  draggable="false"  class="rounded-circle img-fluid d-block mx-auto jellyrice" src="media/image/creds/fabian.gif" style=" margin: 10px; border: 3px dashed white">
+          <h3>Mary Aerielle Fabian
+            <br>
+            <small>Animator of "Life of St. Columban"</small>
+          </h3>
+        </div>
+
+      </div>
+
+    </div>
+
+
+</center>
+
+<div style="background-color: rgba(5,5,5,.6);padding:20px"> 
+  <center>
+    <h6 style="color: white; width: 80%">
+      All Rights Reserved 2018 <br>
+      © crzn.io <br>
+    7c503da665529a665d7c71e22d3edd0a </h6>
+
+
+    <button data-dismiss="modal" class="nxt" onclick="clicker()" onmouseover="hoverbutton()" style="color: white"> <i class="el el-fw" style="color: turquoise">&#xf20d;</i> Cool </button>
+
+  </center>
+</div>
+
+
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  const { shell } = require('electron')
+
+    function linkdesu(){
+      shell.openExternal('https://www.crzn.online')
+    }
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>if (window.module) module = window.module;</script>
+</body>
+
+</html>

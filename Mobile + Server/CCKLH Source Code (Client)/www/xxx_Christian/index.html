@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>crzn.io</title>
+	<link rel="shortcut icon" href="media/image/favicon.ico">
+
+<link rel="stylesheet" href="../vendor/jquery.mobile-1.4.5.min.css" />
+
+<script src="../vendor/jquery-1.11.1.min.js"></script>
+<script src="../vendor/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../vendor/own.css">
+	<link rel="stylesheet" type="text/css" href="nums.css">
+
+	<style>
+					.texts {style="font-family: Arial;
+					font-style: none;
+					font-weight: bolder;
+					text-decoration: none;
+					text-transform: none;
+					color: white;
+					text-shadow: 0 0 0"}
+	</style>
+
+	<style type="text/css">
+						.main-bg{
+							background-image:url(media/image/main-bg.jpg);
+							background-size: 100%;
+						}
+
+
+						.feeter {
+							position: fixed;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+						}
+
+						.bgc{background-image: linear-gradient(to right, #5ee0e0, #41d7ff, #72c7ff, #b7b0ff, #ee96e3);}
+
+	</style>
+
+
+
+
+<style>
+img:active {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+
+
+
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+
+            </style>
+
+
+            <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to return home?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  window.location = "../index.html";
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+          </script>
+
+
+
+
+
+
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+</head>
+
+<body class="bgc" onload="musicplay(), onLoad()">
+
+ <div class="se-pre-con"></div>
+
+	<audio id="bgm" loop="true" hidden="true" src="../media/audio/BGMCL.mp3" type="audio/mp3"></audio> 
+	  <script>
+		  var crznbgm = document.getElementById("bgm");
+		  crznbgm.volume = 0.3;
+		  function musicplay() {crznbgm.play();}
+	  </script> 
+
+
+
+
+	<audio id="poot" hidden="true" src="../media/audio/poot.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crznpoot = document.getElementById("poot");
+		  function pootplay() {crznpoot.play();}
+	  </script> 
+
+
+
+<!-- Start of main page -->
+<div data-role="page" id="main_menu" class="main-bg" style="background: linear-gradient(135deg, rgba(250,151,135,1) 0%, rgba(247,247,121,1) 52%, rgba(133,190,255,1) 99%, rgba(133,190,255,1) 100%)">
+
+
+
+
+  
+
+		<center>
+				<div role="header" class="header" style="margin-top: 40px">
+					<center><img  src="media/image/main.png" style="width: 90%"></center>
+				</div><!-- /content -->
+
+
+				<div class="align-bottom" style="margin-top: 25px">
+
+					
+
+					<a href="#one" data-transition="pop" onclick="pootplay()">
+						<img src="media/image/moses.png" width="100%">
+					</a>
+
+					<a href="vid/columbie.html" rel="external" data-transition="pop"  onclick="pootplay()">
+						<img src="media/image/columban.png" width="100%">
+					</a>
+
+					<a  data-toggle="modal" data-target="#soon" data-backdrop="static" data-keyboard="false" onclick="pootplay()">
+						<img src="media/image/gmrm.png" width="100%">
+					</a>
+
+
+					<a data-toggle="modal" data-target="#soon" data-backdrop="static" data-keyboard="false" onclick="pootplay()">
+						<img src="media/image/prayers.png" width="100%">
+					</a>
+
+					
+				</div><!-- /footer -->
+
+		</center>
+
+
+</div> <!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of help -->
+<div data-role="page" id="crzn_help" class="main-bg">
+
+	<button class="btn-success btn btn-block" disabled="disabled">Instructions</button>
+
+	<div class="container">
+		<center>
+		<img src="media/image/help.png" style="width: 100%">
+		</center>
+	</div>
+
+	<center>
+		<a href="#main_menu"><button onclick="pootplay()" class="btn-lg texts" style="background-color: green;border-radius: 30%"> ⌂ </button></a>
+	</center>
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of one  -->
+<div data-role="page" id="one" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px ; width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#one_modal" onclick="pootplay()" data-backdrop="static">I</button>
+		<br><br>
+		<img src="media/image/one.png" onclick="Oneplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 400%;color:  " onclick="pootplay()"> Put God First </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#main_menu" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#two" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="onename" hidden="true" src="media/audio/name/one.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var oneplay = document.getElementById("onename");
+		  function Oneplay() {oneplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="one_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3> 1. “Thou shalt have no other gods before me” </h3>
+				     	 <h6>(Exodus 20:3)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of two  -->
+<div data-role="page" id="two" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#two_modal" onclick="pootplay()" data-backdrop="static">II</button>
+		<br><br>
+		<img src="media/image/two.png" onclick="Twoplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 400%; " onclick="pootplay()"> Worship Only God </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#one" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#three" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="twoname" hidden="true" src="media/audio/name/two.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var twoplay = document.getElementById("twoname");
+		  function Twoplay() {twoplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="two_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3> “Thou shalt not make unto thee any graven image”  </h3>
+				     	 <h6>(Exodus 20:4)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of three  -->
+<div data-role="page" id="three" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#three_modal" onclick="pootplay()" data-backdrop="static">III</button>
+		<br><br>
+		<img src="media/image/three.png" onclick="Threeplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 300%; " onclick="pootplay()"> Don't Misuse God's Name </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#two" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#four" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="threename" hidden="true" src="media/audio/name/three.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var threeplay = document.getElementById("threename");
+		  function Threeplay() {threeplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="three_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3> “Thou shalt not take the name of the Lord thy God in vain”   </h3>
+				     	 <h6>(Exodus 20:7)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of four  -->
+<div data-role="page" id="four" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#four_modal" onclick="pootplay()" data-backdrop="static">IV</button>
+		<br><br>
+		<img src="media/image/four.png" onclick="Fourplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 250%; " onclick="pootplay()"> Rest on the Seventh Day and Keep it Holy </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#three" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#five" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="fourname" hidden="true" src="media/audio/name/four.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var fourplay = document.getElementById("fourname");
+		  function Fourplay() {fourplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="four_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3> “Remember the sabbath day, to keep it holy”    </h3>
+				     	 <h6>(Exodus 20:8)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of five  -->
+<div data-role="page" id="five" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#five_modal" onclick="pootplay()" data-backdrop="static">V</button>
+		<br><br>
+		<img src="media/image/five.png" onclick="Fiveplay()" style="width: 100%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 350%; " onclick="pootplay()"> Obey Your Parents </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#four" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#six" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="fivename" hidden="true" src="media/audio/name/five.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var fiveplay = document.getElementById("fivename");
+		  function Fiveplay() {fiveplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="five_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3>  “Honour thy father and thy mother”     </h3>
+				     	 <h6>(Exodus 20:12)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of six  -->
+<div data-role="page" id="six" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#six_modal" onclick="pootplay()" data-backdrop="static">VI</button>
+		<br><br>
+		<img src="media/image/six.png" onclick="Sixplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 300%; " onclick="pootplay()"> Never Hurt Anyone </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#five" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#seven" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="sixname" hidden="true" src="media/audio/name/six.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var sixplay = document.getElementById("sixname");
+		  function Sixplay() {sixplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="six_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3>  “Thou shalt not kill”      </h3>
+				     	 <h6>(Exodus 20:13)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of seven  -->
+<div data-role="page" id="seven" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 25px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#seven_modal" onclick="pootplay()" data-backdrop="static">VII</button>
+		<br><br>
+		<img src="media/image/seven.png" onclick="Sevenplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 300%; " onclick="pootplay()"> Keep Wedding Promises </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#six" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#eight" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="sevenname" hidden="true" src="media/audio/name/seven.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var sevenplay = document.getElementById("sevenname");
+		  function Sevenplay() {sevenplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="seven_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3>  “Thou shalt not commit adultery”       </h3>
+				     	 <h6>(Exodus 20:14)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of eight  -->
+<div data-role="page" id="eight" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 22px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#eight_modal" onclick="pootplay()" data-backdrop="static">VIII</button>
+		<br><br>
+		<img src="media/image/eight.png" onclick="Eightplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 350%; " onclick="pootplay()">Don't Steal </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#seven" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#nine" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="eightname" hidden="true" src="media/audio/name/eight.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var eightplay = document.getElementById("eightname");
+		  function Eightplay() {eightplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="eight_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+			    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3>  “Thou shalt not steal”       </h3>
+				     	 <h6>(Exodus 20:15)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of nine  -->
+<div data-role="page" id="nine" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#nine_modal" onclick="pootplay()" data-backdrop="static">IX</button>
+		<br><br>
+		<img src="media/image/nine.png" onclick="Nineplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 300%; " onclick="pootplay()"> Always Tell the Truth </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#eight" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#ten" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="ninename" hidden="true" src="media/audio/name/nine.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var nineplay = document.getElementById("ninename");
+		  function Nineplay() {nineplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="nine_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+					<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3>  “Thou shalt not bear false witness against thy neighbour”        </h3>
+				     	 <h6>(Exodus 20:16)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of ten  -->
+<div data-role="page" id="ten" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;width: 50px;height: 50px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#ten_modal" onclick="pootplay()" data-backdrop="static">X</button>
+		<br><br>
+		<img src="media/image/ten.png" onclick="Tenplay()" style="width: 100%;" class="jellyrice">
+		<br>
+		<h1 style="font-size: 300%; " onclick="pootplay()"> Don't Envy Others </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#nine" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#main_menu" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Home ⌂</button></a>
+	</div>
+
+
+
+	<audio id="tenname" hidden="true" src="media/audio/name/ten.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var tenplay = document.getElementById("tenname");
+		  function Tenplay() {tenplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="ten_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+	  			<div class="modal-content">
+
+
+					<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+			            <br>
+			            <center>
+
+				     	 <h3>  “Thou shalt not covet”        </h3>
+				     	 <h6>(Exodus 20:17)</h6>
+				     	 <br><br>
+			    		<button data-dismiss="modal" aria-label="Close" class="nxt" style="height: 50px; width: 50px">
+			    			✔
+			            </button>
+				        </center>
+
+			        </div>
+		    	</div>
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  	<div class="modal fade" id="soon" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered modal-dialog modal-dialog-centered-centered" role="document">
+
+	  			<div class="modal-content" style="padding: 20px">
+	  				<center>
+	  						
+	  						<img src="../media/image/looder.gif">
+	  						<h4>The content will be available on future updates . . .</h4>
+
+			    		<button class="nxt" data-dismiss="modal" aria-label="Close" style="color: black">
+			              Okay
+			            </button>
+	  				</center>
+		    	</div>
+		    </div> 
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

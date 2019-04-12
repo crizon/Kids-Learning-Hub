@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>scan log-in</title>
+
+  <script type="text/javascript" src="../cordova.js"></script>
+
+
+<!--   <link rel="stylesheet" href="vendor/jquery.mobile-1.4.5.min.css" /> -->
+  <script src="../vendor/jquery-1.11.1.min.js"></script>
+<!--   <script src="../vendor/jquery.mobile-1.4.5.min.js"></script> -->
+
+  
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="../vendor/own.css">
+
+  <link rel="stylesheet" type="text/css" href="../vendor/elusive-icons.css">
+
+
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+
+                html{height: 100%}
+                body{height: 100%}
+
+
+            </style>
+
+
+
+
+          <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to return home?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  window.location = "../index.html";
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+          </script>
+
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+
+
+
+<script type="text/javascript" src="barcodescanner.js"></script>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body onload="onLoad(),ostplay()" style="background-image: url(a.gif);background-position: center; border: 1px dotted white; height: 100%">
+<div class="se-pre-con"></div>		
+
+<center>
+	<input id="IPdesu" class="form-control" placeholder="Temporary server address"  style="background-color: lightgray; width:90%; border: 5px ridge orange; border-radius: 50px; text-align: center;margin: 5px" />
+</center>
+
+<script type="text/javascript">
+
+	function kasali() {
+	          	
+             cordova.plugins.barcodeScanner.scan(
+                function (result) {
+
+                  var IDnum = result.text;
+                 /* eto na yung gagamitin kong login ng mga bata scan lang barcode sa ID tapos eto na ibabato ko sa PHP :D
+
+
+                 alert("We got a barcode\n" +
+                          "Result: " + result.text + "\n" +
+                          "Format: " + result.format + "\n" +
+                          "Cancelled: " + result.cancelled);*/
+
+
+                /*    document.getElementById('hoho').innerHTML=IDnum;
+                    alert("Shit eto yung result text nyang iniscan mo: \n \n" + IDnum);*/
+
+
+
+
+
+                    var addressIP = document.getElementById("IPdesu").value; /*eto yung trick para maedit muna natin yung IP*/
+
+
+
+
+                    var cj = "http://" + addressIP + "/sadserver/login_process.php?uname=" + IDnum;	
+                    var hola = cordova.InAppBrowser.open(cj,'_parent','location=no,zoom=no,shouldPauseOnSuspend=yes,clearsessioncache=yes,clearcache=yes,hardwareback=no');
+                        hola.addEventListener('loaderror', function(event) {
+                        hola.close(); 
+                      alert("An Error Occured. Make sure you have internet connection."); 
+
+                    });
+
+    
+                }, 
+
+                function (error) {
+                    alert("Scanning failed: " + error);
+                }
+             );
+   }
+
+          
+
+
+
+function bisita(){
+
+    var guestID = "87654321";
+
+    var addresseeIP = document.getElementById("IPdesu").value; /*eto yung trick para maedit muna natin yung IP*/
+    
+    var guestdesu = "http://" + addresseeIP + "/sadserver/login_process.php?uname=" + guestID;
+    var diosa =	cordova.InAppBrowser.open(guestdesu,'_parent','location=no,zoom=no,shouldPauseOnSuspend=yes,clearsessioncache=yes,clearcache=yes,hardwareback=no');
+    diosa.addEventListener('loaderror', function(event) {
+    diosa.close(); 
+    alert("An Error Occured. Make sure you have internet connection.");
+
+  });
+
+}
+
+</script>
+
+
+
+
+
+
+
+<center>
+	
+  <br>
+
+
+  <!-- <div id="hoho" style="color: black; font-weight: bold; font-size: 30px"></div> -->
+
+  <img src="quizxs.png" width="80%" class="jellyrice">
+
+  <br><br>
+
+ 
+   
+
+  <h3 style="color: white">Take quiz as?</h3>
+
+  <br>
+  
+
+ 
+
+	<a class="jello btn" onclick="pootplay(),bisita()" style="background-color: rgb(0,161,255); height: 90px;width: 40%; font-size: 17pt; border: 5px ridge orange;border-radius: 50px; color: white"> <i class="el el-fw jellyrice">&#xf105;</i><br> Guest </a>
+
+
+	<span style="width: 5%; color: transparent;"> - | - </span>
+
+	 <a class="jello btn" onclick="pootplay(),kasali()" style="background-color: rgb(0,161,255); height: 90px;width: 40%; font-size: 17pt; border: 5px ridge orange;border-radius: 50px; color: white"> <i class="el el-fw jellyrice">&#xf131;</i><br> Student </a>
+
+  
+
+
+  
+
+
+
+</center>
+
+
+    <div style="margin: 1px; bottom: 0;left: 0; background-color: rgba(5,5,5,.8);position: fixed; width: 99.5%; color: white; padding-left: 20px; padding-top: 7px">
+          <h6>NOTE: <br>
+            <small>
+              <li> INTERNET CONNECTION IS REQUIRED. </li>
+              <li> PRESSING THE BACK BUTTON WILL CLOSE THE QUIZ.</li>
+              <li> <i> Guest </i> - the score is unrecorded. </li>
+              <li> <i> Student </i> - Scan the barcode in your ID. Score is recorded. </li>
+
+
+            </small>
+          </h6>
+    </div>
+
+
+
+    <audio id="poot" hidden="true" src="../media/audio/poot.mp3"> </audio>
+
+    <script>
+      var crznpoot = document.getElementById("poot");
+
+      function pootplay() {crznpoot.play();}
+
+    </script> 
+
+    <audio id="quizdesu" loop="true" hidden="true" src="../media/audio/tiny.mp3" type="audio/mp3"></audio> 
+
+    <script>
+      var crznost = document.getElementById("quizdesu");
+      crznost.volume = 0.7;
+      function ostplay() {crznost.play();}
+    </script> 
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

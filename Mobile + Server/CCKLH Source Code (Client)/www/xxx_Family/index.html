@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>crzn.io</title>
+	<link rel="shortcut icon" href="media/image/favicon.ico">
+
+<link rel="stylesheet" href="../vendor/jquery.mobile-1.4.5.min.css" />
+
+<script src="../vendor/jquery-1.11.1.min.js"></script>
+<script src="../vendor/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../vendor/own.css">
+
+	<style>
+					.texts {style="font-family: Arial;
+					font-style: none;
+					font-weight: bolder;
+					text-decoration: none;
+					text-transform: none;
+					color: white;
+					text-shadow: 0 0 0"}
+	</style>
+
+	<style type="text/css">
+						.main-bg{
+							background-image:url(media/image/main-bg.jpg);
+							background-size: 100%;
+						}
+
+
+						.feeter {
+							position: fixed;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+						}
+
+						.bgc{background-image: url(../media/image/bibi.png); background-position: top;}
+
+
+						.butt{width: 40%; border-radius: 25%;font-weight: bolder; height: 50px}
+	</style>
+
+
+
+
+<style>
+img:active {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+
+
+
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+
+            </style>
+
+
+
+            <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to return home?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  window.location = "../index.html";
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+          </script>
+
+
+
+
+
+
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+
+</head>
+
+<body class="bgc" onload="musicplay(), onLoad()" >
+
+ <div class="se-pre-con"></div>
+
+	<audio id="bgm" loop="true" hidden="true" src="../media/audio/BGM_3.mp3" type="audio/mp3"></audio> 
+	  <script>
+		  var crznbgm = document.getElementById("bgm");
+		  crznbgm.volume = 0.4;
+		  function musicplay() {crznbgm.play();}
+	  </script> 
+
+
+
+
+	<audio id="poot" hidden="true" src="../media/audio/poot.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crznpoot = document.getElementById("poot");
+		  function pootplay() {crznpoot.play();}
+	  </script> 
+
+
+<!-- Start of main page -->
+<div data-role="page" id="main_menu" style="background-image: url(../media/image/bibi.png);background-position: bottom; background-size: 100%">
+
+
+
+
+  
+
+		<center>
+				<div role="header" class="header" style="margin-top: 80px">
+					<center><img src="media/image/main.png" style="width: 85%" class="bootboot"></center>
+
+
+				</div><!-- /content -->
+
+
+				<div class="align-bottom" style="margin-top: 25px">
+
+					
+
+					<a href="#father" data-transition="pop" ><button onclick="Startplay()" class="nxt" style="width:185px; height: 60px;margin-bottom: 5px"> <b> ▷ Start </b> </button></a>
+
+
+						<audio id="start" hidden="true" src="../media/audio/start.mp3" type="audio/mp3"> </audio>
+						  <script>
+							  var startplay = document.getElementById("start");
+							  function Startplay() {startplay.play();}
+						  </script> 
+
+
+					<br>
+					<a href="#crzn_help" data-transition="flip" ><button onclick="pootplay()" class="nxt" style="width:185px; height: 60px;margin-top: 15px"> <b> ? Help </b> </button></a>
+
+<br><br>
+					
+				</div><!-- /footer -->
+
+		</center>
+
+
+</div> <!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of help -->
+<div data-role="page" id="crzn_help" style="background-image: linear-gradient(to right top, #34f892, #00e1ca, #00c3f4, #009ffe, #1275e1);">
+	
+	<button class="btn-info btn btn-block" disabled="disabled">Instructions</button>
+	<br>
+	<div class="container">
+		<center>
+		<img src="media/image/help.png" style="width:80%">
+		</center>
+
+		<br>
+		<h3 style="color: white"> 1 Press to hear family member (English). </h3>
+		<br>
+		<h3 style="color: white"> 2 Press to hear family member (Filipino). </h3>
+		<br>
+		<h3 style="color: white"> Use the next & back button to navigate family members.</h3>
+
+	</div><br><br>
+
+	<center>
+		<a href="#main_menu"><button onclick="pootplay()" class="nxt"> Okay </button></a>
+	</center>
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of father  -->
+<div data-role="page" id="father" class="bgc">
+
+	<div role="main" class="ui-content"><br>
+		
+		<center>
+			<img src="media/image/father.png" style="width: 65%" class="jellyrice"> <br> <br> 
+
+				<button class="butt btn-info" onclick="FatherE()">Father</button>
+				<button style="width: 5%; opacity: 0">Father</button>
+				<button class="butt btn-info" onclick="FatherT()">Tatay</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="fatherE" hidden="true" src="media/audio/english/father.mp3" type="audio/mp3"> </audio>
+
+	<audio id="fatherT" hidden="true" src="media/audio/tagalog/father.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var fatherE = document.getElementById("fatherE");
+		function FatherE() {fatherE.play();}
+
+		var fatherT = document.getElementById("fatherT");
+		function FatherT() {fatherT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#main_menu" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#mother" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of mother  -->
+<div data-role="page" id="mother" class="bgc">
+
+	<div role="main" class="ui-content"><br>
+		
+		<center>
+			<img src="media/image/mother.png" style="width: 65%" class="jellyrice"> <br> <br>
+
+				<button class="butt btn-info" onclick="MotherE()">Mother</button>
+				<button style="width: 5%; opacity: 0">mother</button>
+				<button class="butt btn-info" onclick="MotherT()">Nanay</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="motherE" hidden="true" src="media/audio/english/mother.mp3" type="audio/mp3"> </audio>
+
+	<audio id="motherT" hidden="true" src="media/audio/tagalog/mother.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var motherE = document.getElementById("motherE");
+		function MotherE() {motherE.play();}
+
+		var motherT = document.getElementById("motherT");
+		function MotherT() {motherT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#father" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#bbrother" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of bbrother  -->
+<div data-role="page" id="bbrother" class="bgc">
+
+	<div role="main" class="ui-content"><br>
+		
+		<center>
+			<img src="media/image/bbrother.png" style="width: 65%" class="jellyrice"> <br> <br>
+
+				<button class="butt btn-info" onclick="BbrotherE()">Big Brother</button>
+				<button class="butt" style="width: 2%; opacity: 0">bbrother</button>
+				<button class="butt btn-info" onclick="BbrotherT()">Kuya</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="bbrotherE" hidden="true" src="media/audio/english/bbrother.mp3" type="audio/mp3"> </audio>
+
+	<audio id="bbrotherT" hidden="true" src="media/audio/tagalog/bbrother.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var bbrotherE = document.getElementById("bbrotherE");
+		function BbrotherE() {bbrotherE.play();}
+
+		var bbrotherT = document.getElementById("bbrotherT");
+		function BbrotherT() {bbrotherT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#mother" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#bsister" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of bsister  -->
+<div data-role="page" id="bsister" class="bgc">
+
+	<div role="main" class="ui-content"><br><br>
+		
+		<center>
+			<img src="media/image/bsister.png" style="width: 70%" class="jellyrice"> <br> <br>
+
+				<button class="butt btn-info" onclick="BsisterE()">Big Sister</button>
+				<button class="butt" style="width: 2%; opacity: 0">bsister</button>
+				<button class="butt btn-info" onclick="BsisterT()">Ate</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="bsisterE" hidden="true" src="media/audio/english/bsister.mp3" type="audio/mp3"> </audio>
+
+	<audio id="bsisterT" hidden="true" src="media/audio/tagalog/bsister.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var bsisterE = document.getElementById("bsisterE");
+		function BsisterE() {bsisterE.play();}
+
+		var bsisterT = document.getElementById("bsisterT");
+		function BsisterT() {bsisterT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#bbrother" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#lbrother" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of lbrother  -->
+<div data-role="page" id="lbrother" class="bgc">
+
+	<div role="main" class="ui-content"><br><br>
+		
+		<center>
+			<img src="media/image/lbrother.png" style="width: 65%" class="jellyrice"> <br> <br>
+
+				<button class="butt btn-info" onclick="LbrotherE()" style="font-weight: bold;">Little Brother</button>
+				<button class="butt" style="width: 2%; opacity: 0">lbrother</button>
+				<button class="butt btn-info" onclick="LbrotherT()">Bunso</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="lbrotherE" hidden="true" src="media/audio/english/lbrother.mp3" type="audio/mp3"> </audio>
+
+	<audio id="lbrotherT" hidden="true" src="media/audio/tagalog/little.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var lbrotherE = document.getElementById("lbrotherE");
+		function LbrotherE() {lbrotherE.play();}
+
+		var lbrotherT = document.getElementById("lbrotherT");
+		function LbrotherT() {lbrotherT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#bsister" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#lsister" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of lsister  -->
+<div data-role="page" id="lsister" class="bgc">
+
+	<div role="main" class="ui-content"><br><br>
+		
+		<center>
+			<img src="media/image/lsister.png" style="width: 70%" class="jellyrice"> <br> <br>
+
+				<button class="butt btn-info" onclick="LsisterE()" style="font-weight: bold;">Little Sister</button>
+				<button class="butt" style="width: 2%; opacity: 0">lsister</button>
+				<button class="butt btn-info" onclick="LsisterT()">Bunso</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="lsisterE" hidden="true" src="media/audio/english/lsister.mp3" type="audio/mp3"> </audio>
+
+	<audio id="lsisterT" hidden="true" src="media/audio/tagalog/little.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var lsisterE = document.getElementById("lsisterE");
+		function LsisterE() {lsisterE.play();}
+
+		var lsisterT = document.getElementById("lsisterT");
+		function LsisterT() {lsisterT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#lbrother" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#gfather" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of gfather  -->
+<div data-role="page" id="gfather" class="bgc">
+
+	<div role="main" class="ui-content"><br><br>
+		
+		<center>
+			<img src="media/image/gfather.png" style="width: 60%" class="jellyrice"><br><br>
+
+				<button class="butt btn-info" onclick="GfatherE()" style="font-weight: bold;">Grand Father</button>
+				<button class="butt" style="width: 2%; opacity: 0">gfather</button>
+				<button class="butt btn-info" onclick="GfatherT()">Lolo</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="gfatherE" hidden="true" src="media/audio/english/gfather.mp3" type="audio/mp3"> </audio>
+
+	<audio id="gfatherT" hidden="true" src="media/audio/tagalog/gfather.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var gfatherE = document.getElementById("gfatherE");
+		function GfatherE() {gfatherE.play();}
+
+		var gfatherT = document.getElementById("gfatherT");
+		function GfatherT() {gfatherT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#lsister" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#gmother" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of gmother  -->
+<div data-role="page" id="gmother" class="bgc">
+
+	<div role="main" class="ui-content"><br><br>
+		
+		<center>
+			<img src="media/image/gmother.png" style="width: 65%" class="jellyrice"> <br> <br>
+
+				<button class="butt btn-info" onclick="GmotherE()" style="font-weight: bold;">Grand Mother</button>
+				<button class="butt" style="width: 2%; opacity: 0">gmother</button>
+				<button class="butt btn-info" onclick="GmotherT()">Lola</button>
+
+		</center>
+
+	</div>
+
+
+	<audio id="gmotherE" hidden="true" src="media/audio/english/gmother.mp3" type="audio/mp3"> </audio>
+
+	<audio id="gmotherT" hidden="true" src="media/audio/tagalog/gmother.mp3" type="audio/mp3"> </audio>
+
+	  <script>
+
+	  	var gmotherE = document.getElementById("gmotherE");
+		function GmotherE() {gmotherE.play();}
+
+		var gmotherT = document.getElementById("gmotherT");
+		function GmotherT() {gmotherT.play();}
+
+	  </script> 
+
+	
+
+
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#gfather" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#main_menu" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Home ⌂</button></a>
+	</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

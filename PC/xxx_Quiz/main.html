@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QUIZ</title>
+
+
+<link rel="stylesheet" href="vendor/jquery.mobile-1.4.5.min.css">
+<script src="vendor/jquery.mobile-1.4.5.min.js"></script>
+
+  <script src="vendor/jquery-1.11.1.min.js"></script>
+
+
+  
+  <link href="vendor/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="vendor/own.css">
+  
+  <script src="vendor/own.js"></script>
+  <link rel="stylesheet" type="text/css" href="vendor/sweetalert.css">
+  <script src="vendor/sweetalert.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="vendor/elusive-icons.css">
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+            ::-webkit-scrollbar { display: none; }
+
+
+html {height: 100%}
+
+body {height: 100%}
+
+.tangkad {height: 100%}
+
+            </style>
+
+
+
+<style> .checked { color: orange; } </style>
+
+
+
+</head> 
+
+<body style="background-image: url(media/a.gif); background-position: center;" onload="ostplay()">
+
+
+<audio id="poot" hidden="true" src="media/poot.mp3"> </audio>
+<script>
+      var crznpoot = document.getElementById("poot");
+      function pootplay() {crznpoot.play();}
+</script> 
+ 
+
+
+<div style="background-image: url(media/a.gif); background-position: center;padding: 55px">
+
+  <div style="background-color: rgb(0,161,255); border: 5px ridge orange; border-radius: 5px; color: white;">
+
+    <center>
+      <h2 style="color: white;"> Choose Level </h2>
+    </center>
+
+  </div>
+
+
+
+
+
+<br><br><br>
+
+        <div style="padding: 5px;">
+
+
+
+
+
+                  <div style="margin: 30px;padding: 15px; background-color: lemonchiffon; border: 5px outset darkorange; border-radius: 10px">
+                  
+                    
+                      <div class="row">
+
+                        <div style="width: 30%">
+                          <img draggable="false"  class="jellyrice" width="80%" src="media/weak.png" style="z-index: 5; margin-left: -20%; margin-top: -20%">
+                        </div>
+                        
+
+                        <div style="width: 70%;"> 
+                          <h3>Easy Level </h3>
+                          <p> Test your knowledge in easy level.</p>
+                        </div>
+
+                      </div>
+ 
+                      <center> <a rel="external" href="easy_AF.html" onclick="pootplay()" class="btn btn-success jello" style="color: white;box-shadow: 3px 3px 5px 1px rgba(10,10,10,.7); border: 5px ridge orange; border-radius: 15px; float: right;"> <i class="el el-fw">&#xf1c6;</i> Play</a> </center>
+
+                  </div>
+                  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div style="margin: 30px;padding: 15px; background-color: lemonchiffon; border: 5px outset darkorange; border-radius: 10px">
+                  
+                    
+                      <div class="row">
+
+                        <div style="width: 30%">
+                          <img draggable="false"  class="jellyrice" width="85%" src="media/mejo.png" style="z-index: 5; margin-left: -20%; margin-top: -20%">
+                        </div>
+                        
+
+                        <div style="width: 70%;"> 
+                          <h3>Normal Level </h3>
+                          <p> Test your knowledge in normal level.</p>
+                        </div>
+
+                      </div>
+ 
+                      <center>
+                        <a rel="external" href="normal_AF.html" class="btn btn-success jello" style="color: white;box-shadow: 3px 3px 5px 1px rgba(10,10,10,.7); border: 5px ridge orange; border-radius: 15px; float: right;">
+                            <i class="el el-fw">&#xf1c6;</i> Play
+                        </a>
+                      </center>
+
+                  </div>
+                  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div style="margin: 30px;padding: 15px; background-color: lemonchiffon; border: 5px outset darkorange; border-radius: 10px">
+                  
+                    
+                      <div class="row">
+
+                        <div style="width: 30%">
+                          <img draggable="false"  class="jellyrice" width="120%" src="media/malakas.png" style="z-index: 5; margin-left: -30%; margin-top: -30%">
+                        </div>
+                        
+
+                        <div style="width: 70%;"> 
+                          <h3>Hard Level </h3>
+                          <p> Test your knowledge in hard level.</p>
+                        </div>
+
+                      </div>
+ 
+                      <center>
+                        <a onclick="alert('The content will be available on future updates . . .')" class="btn btn-success jello" style="color: white;box-shadow: 3px 3px 5px 1px rgba(10,10,10,.7); border: 5px ridge orange; border-radius: 15px; float: right;">
+                          <i class="el el-fw">&#xf1c6;</i> Play
+                        </a>
+                      </center>
+
+                  </div>
+
+
+        </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 
+    <script src="vendor/jquery.min.js"></script> -->
+    <script src="vendor/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

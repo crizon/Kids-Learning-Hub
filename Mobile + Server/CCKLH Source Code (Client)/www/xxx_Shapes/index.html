@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>crzn.io</title>
+	<link rel="shortcut icon" href="media/image/favicon.ico">
+
+<link rel="stylesheet" href="../vendor/jquery.mobile-1.4.5.min.css" />
+
+<script src="../vendor/jquery-1.11.1.min.js"></script>
+<script src="../vendor/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../vendor/own.css">
+
+	<style>
+					.texts {style="font-family: Arial;
+					font-style: none;
+					font-weight: bolder;
+					text-decoration: none;
+					text-transform: none;
+					color: white;
+					text-shadow: 0 0 0"}
+	</style>
+
+	<style type="text/css">
+						.main-bg{
+							background-image:url(media/image/main-bg.jpg);
+							background-size: 100%;
+						}
+
+
+						.feeter {
+							position: fixed;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+						}
+
+						.bgc{background-color: white}
+
+	</style>
+
+
+
+
+<style>
+img:active {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+
+
+
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+
+            </style>
+
+            <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to return home?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  window.location = "../index.html";
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+          </script>
+
+
+
+
+
+
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+
+</head>
+
+<body class="main-bg" onload="musicplay(), onLoad()" >
+
+ <div class="se-pre-con"></div>
+
+	<audio id="bgm" loop="true" hidden="true" src="../media/audio/BGM_2.mp3" type="audio/mp3"></audio> 
+	  <script>
+		  var crznbgm = document.getElementById("bgm");
+		  function musicplay() {crznbgm.play();}
+	  </script> 
+
+
+
+
+	<audio id="poot" hidden="true" src="../media/audio/poot.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crznpoot = document.getElementById("poot");
+		  function pootplay() {crznpoot.play();}
+	  </script> 
+
+
+
+<!-- Start of main page -->
+<div data-role="page" id="main_menu" style="background-image: url(../media/image/bibi.png);background-position: bottom; background-size: 100%">
+
+
+
+
+  
+
+		<center>
+				<div role="header" class="header" style="margin-top: 80px">
+					<center><img src="media/image/main.png" style="width: 85%" class="bootboot"></center>
+
+				</div><!-- /content -->
+
+
+				<div class="align-bottom" style="margin-top: 25px">
+
+					
+
+					<a href="#circle" data-transition="pop" ><button onclick="Startplay()" class="nxt" style="width:185px; height: 60px;margin-bottom: 5px"> <b> ▷ Start </b> </button></a>
+
+
+						<audio id="start" hidden="true" src="../media/audio/start.mp3" type="audio/mp3"> </audio>
+						  <script>
+							  var startplay = document.getElementById("start");
+							  function Startplay() {startplay.play();}
+						  </script> 
+
+
+					<br>
+					<a href="#crzn_help" data-transition="flip" ><button onclick="pootplay()" class="nxt" style="width:185px; height: 60px;margin-top: 15px"> <b> ? Help </b> </button></a>
+
+<br><br>
+					
+				</div><!-- /footer -->
+
+		</center>
+
+
+</div> <!-- /page -->
+
+
+
+
+
+
+
+
+
+
+<!-- Start of help -->
+<div data-role="page" id="crzn_help" style="background-image: linear-gradient(to right top, #34f892, #00e1ca, #00c3f4, #009ffe, #1275e1);">
+	
+	<button class="btn-info btn btn-block" disabled="disabled">Instructions</button>
+	<br>
+	<div class="container">
+		<center>
+		<img src="media/image/help.png" style="width:80%">
+		</center>
+
+		<br>
+		<h3 style="color: white"> 1 Press to hear shape name. </h3>
+		<br>
+		<h3 style="color: white"> 2 Press to reveal example object. </h3>
+		<br>
+		<h3 style="color: white"> Use the next & back button to navigate shapes.</h3>
+
+	</div><br><br>
+
+	<center>
+		<a href="#main_menu"><button onclick="pootplay()" class="nxt"> Okay </button></a>
+	</center>
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of circle  -->
+<div data-role="page" id="circle" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#circle_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/circle.gif" onclick="Circleplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%;  " onclick="pootplay()"> Circle </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#main_menu" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#square" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="circlename" hidden="true" src="media/audio/name/circle.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var circleplay = document.getElementById("circlename");
+		  function Circleplay() {circleplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="circle_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/circle.png" width="75%">
+			     	<h1 style="color: black;   ">Ball</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of square  -->
+<div data-role="page" id="square" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#square_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/square.gif" onclick="Squareplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%;  " onclick="pootplay()"> Square </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#circle" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#triangle" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="squarename" hidden="true" src="media/audio/name/square.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var squareplay = document.getElementById("squarename");
+		  function Squareplay() {squareplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="square_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/square.png" width="75%">
+			     	<h1 style="color: black;   ">Rubik's Cube</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of triangle  -->
+<div data-role="page" id="triangle" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#triangle_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/triangle.gif" onclick="Triangleplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%;  " onclick="pootplay()"> Triangle </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#square" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#oval" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="trianglename" hidden="true" src="media/audio/name/triangle.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var triangleplay = document.getElementById("trianglename");
+		  function Triangleplay() {triangleplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="triangle_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/triangle.png" width="75%">
+			     	<h1 style="color: black;   ">Pizza</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of oval  -->
+<div data-role="page" id="oval" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#oval_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/oval.gif" onclick="Ovalplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%;  " onclick="pootplay()"> Oval </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#triangle" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#rectangle" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="ovalname" hidden="true" src="media/audio/name/oval.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var ovalplay = document.getElementById("ovalname");
+		  function Ovalplay() {ovalplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="oval_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/oval.png" width="75%">
+			     	<h1 style="color: black;   ">Egg</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of rectangle  -->
+<div data-role="page" id="rectangle" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#rectangle_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/rectangle.gif" onclick="Rectangleplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 410%;  " onclick="pootplay()"> Rectangle </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#oval" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#diamond" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="rectanglename" hidden="true" src="media/audio/name/rectangle.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var rectangleplay = document.getElementById("rectanglename");
+		  function Rectangleplay() {rectangleplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="rectangle_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/rectangle.png" width="75%">
+			     	<h1 style="color: black;   ">Table</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of diamond  -->
+<div data-role="page" id="diamond" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#diamond_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/diamond.gif" onclick="Diamondplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 450%;  " onclick="pootplay()"> Diamond </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#rectangle" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#heart" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="diamondname" hidden="true" src="media/audio/name/diamond.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var diamondplay = document.getElementById("diamondname");
+		  function Diamondplay() {diamondplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="diamond_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/diamond.png" width="75%">
+			     	<h1 style="color: black;   ">Kite</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of heart  -->
+<div data-role="page" id="heart" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#heart_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/heart.gif" onclick="Heartplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%;  " onclick="pootplay()"> Heart </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#diamond" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#star" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="heartname" hidden="true" src="media/audio/name/heart.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var heartplay = document.getElementById("heartname");
+		  function Heartplay() {heartplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="heart_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/heart.png" width="75%">
+			     	<h1 style="color: black;   ">Lollipop</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of star  -->
+<div data-role="page" id="star" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#star_modal" onclick="pootplay()">✰</button>
+		<br><br><br>
+		<img src="media/image/star.gif" onclick="Starplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%;  " onclick="pootplay()"> Star </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#heart" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#crescent" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="starname" hidden="true" src="media/audio/name/star.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var starplay = document.getElementById("starname");
+		  function Starplay() {starplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="star_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/star.png" width="75%">
+			     	<h1 style="color: black;   ">Wand</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   start of crescent  -->
+<div data-role="page" id="crescent" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#crescent_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/crescent.gif" onclick="Crescentplay()" style="width: 60%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 425%;  " onclick="pootplay()"> Crescent </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#star" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#cross" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="crescentname" hidden="true" src="media/audio/name/crescent.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crescentplay = document.getElementById("crescentname");
+		  function Crescentplay() {crescentplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="crescent_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/crescent.png" width="75%">
+			     	<h1 style="color: black;   ">Moon</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   start of cross  -->
+<div data-role="page" id="cross" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#cross_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/cross.gif" onclick="Crossplay()" style="width: 90%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%;  " onclick="pootplay()"> Cross </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#crescent" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#main_menu" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Home ⌂</button></a>
+	</div>
+
+
+
+	<audio id="crossname" hidden="true" src="media/audio/name/cross.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crossplay = document.getElementById("crossname");
+		  function Crossplay() {crossplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="cross_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+ 
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/shapes/cross.png" width="75%">
+			     	<h1 style="color: black;   ">Bandage</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

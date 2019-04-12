@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>crzn.io</title>
+	<link rel="shortcut icon" href="media/image/favicon.ico">
+
+<link rel="stylesheet" href="../vendor/jquery.mobile-1.4.5.min.css" />
+
+<script src="../vendor/jquery-1.11.1.min.js"></script>
+<script src="../vendor/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../vendor/own.css">
+
+	<style>
+					.texts {style="font-family: Arial;
+					font-style: none;
+					font-weight: bolder;
+					text-decoration: none;
+					text-transform: none;
+					color: white;
+					text-shadow: 0 0 0"}
+	</style>
+
+	<style type="text/css">
+						.main-bg{
+							background-image:url(media/image/main-bg.jpg);
+							background-size: 100%;
+						}
+
+
+						.feeter {
+							position: fixed;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+						}
+
+						.bgc{background-color: white}
+
+
+
+	</style>
+
+
+
+
+<style>
+img:active {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+</style>
+
+
+
+
+
+
+            <!-- TO DISABLE SELECTING -->
+            <style type="text/css">
+              
+            *
+            {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            input
+            {
+            -webkit-user-select: auto !important;
+            -khtml-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+            }
+
+            img { border: none; }
+
+            button:focus {
+              border: none;
+              outline: none;
+                }
+
+              input:focus {
+              border: none;
+              outline: none;
+                }
+
+
+            </style>
+
+
+            <script type="text/javascript" charset="utf-8">
+
+          //Pang disable ng back button :D
+
+          // Wait for device API libraries to load
+          //
+          function onLoad() {
+              document.addEventListener("deviceready", onDeviceReady, false);
+          }
+
+          // device APIs are available
+          //
+          function onDeviceReady() {
+              // Register the event listener
+              document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+
+          // Handle the back button
+          //
+          function onBackKeyDown() {
+ 
+            var txt;
+              var r = confirm("Do you want to return home?");
+              if (r == true) {
+                  txt = "Good bye!";
+                  window.location = "../index.html";
+              } else {
+                  txt = "Great";
+              }
+
+
+          }
+
+
+
+          </script>
+
+
+
+
+
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../media/image/loader.gif) center no-repeat #fff;
+}
+</style>
+
+
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+  
+</script>
+</head>
+
+<body class="main-bg" onload="musicplay(), onLoad()" >
+
+ <div class="se-pre-con"></div>
+
+	<audio id="bgm" loop="true" hidden="true" src="../media/audio/BGM_2.mp3" type="audio/mp3"></audio> 
+	  <script>
+		  var crznbgm = document.getElementById("bgm");
+		  function musicplay() {crznbgm.play();}
+	  </script> 
+
+
+
+
+	<audio id="poot" hidden="true" src="../media/audio/poot.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var crznpoot = document.getElementById("poot");
+		  function pootplay() {crznpoot.play();}
+	  </script> 
+
+
+
+<!-- Start of main page -->
+<div data-role="page" id="main_menu" style="background-image: url(../media/image/bibi.png);background-position: bottom; background-size: 100%">
+
+
+
+
+  
+
+		<center>
+				<div role="header" class="header" style="margin-top: 80px">
+					<center><img src="media/image/main.png" style="width: 85%" class="bootboot"></center>
+
+
+				</div><!-- /content -->
+
+
+				<div class="align-bottom" style="margin-top: 25px">
+
+					
+
+					<a href="#red" data-transition="pop" ><button onclick="Startplay()" class="nxt" style="width:185px; height: 60px;margin-bottom: 5px"> <b> ▷ Start </b> </button></a>
+
+
+						<audio id="start" hidden="true" src="../media/audio/start.mp3" type="audio/mp3"> </audio>
+						  <script>
+							  var startplay = document.getElementById("start");
+							  function Startplay() {startplay.play();}
+						  </script> 
+
+
+					<br>
+					<a href="#crzn_help" data-transition="flip" ><button onclick="pootplay()" class="nxt" style="width:185px; height: 60px;margin-top: 15px"> <b> ? Help </b> </button></a>
+
+<br><br>
+					
+				</div><!-- /footer -->
+
+		</center>
+
+
+</div> <!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of help -->
+<div data-role="page" id="crzn_help" style="background-image: linear-gradient(to right top, #34f892, #00e1ca, #00c3f4, #009ffe, #1275e1);">
+	
+	<button class="btn-info btn btn-block" disabled="disabled">Instructions</button>
+	<br>
+	<div class="container">
+		<center>
+		<img src="media/image/help.png" style="width:80%">
+		</center>
+
+		<br>
+		<h3 style="color: white"> 1 Press to hear the color name.</h3>
+		<br>
+		<h3 style="color: white"> 2 Press to reveal example.</h3>
+		<br>
+		<h3 style="color: white"> Use the next & back button to navigate colors.</h3>
+
+	</div><br><br>
+
+	<center>
+		<a href="#main_menu"><button onclick="pootplay()" class="nxt"> Okay </button></a>
+	</center>
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of red  -->
+<div data-role="page" id="red" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#red_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/red.gif" onclick="Redplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Red </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#main_menu" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#orange" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="redname" hidden="true" src="media/audio/name/red.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var redplay = document.getElementById("redname");
+		  function Redplay() {redplay.play();}
+	  </script> 
+
+
+
+	  	<div class="modal fade" id="red_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/red.png" width="75%">
+			     	<h1 style="color: black;  ">Balloon</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of orange  -->
+<div data-role="page" id="orange" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#orange_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/orange.gif" onclick="Orangeplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Orange </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#red" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#yellow" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="orangename" hidden="true" src="media/audio/name/orange.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var orangeplay = document.getElementById("orangename");
+		  function Orangeplay() {orangeplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="orange_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/orange.png" width="75%">
+			     	<h1 style="color: black;  ">Ball</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of yellow  -->
+<div data-role="page" id="yellow" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#yellow_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/yellow.gif" onclick="Yellowplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Yellow </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#orange" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#green" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="yellowname" hidden="true" src="media/audio/name/yellow.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var yellowplay = document.getElementById("yellowname");
+		  function Yellowplay() {yellowplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="yellow_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/yellow.png" width="75%">
+			     	<h1 style="color: black;  ">Rubber Duck</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of green  -->
+<div data-role="page" id="green" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#green_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/green.gif" onclick="Greenplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Green </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#yellow" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#blue" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="greenname" hidden="true" src="media/audio/name/green.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var greenplay = document.getElementById("greenname");
+		  function Greenplay() {greenplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="green_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/green.png" width="75%">
+			     	<h1 style="color: black;  ">Leaf</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of blue  -->
+<div data-role="page" id="blue" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#blue_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/blue.gif" onclick="Blueplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Blue </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#green" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#indigo" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="bluename" hidden="true" src="media/audio/name/blue.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var blueplay = document.getElementById("bluename");
+		  function Blueplay() {blueplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="blue_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/blue.png" width="75%">
+			     	<h1 style="color: black;  ">Cap</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of indigo  -->
+<div data-role="page" id="indigo" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#indigo_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/indigo.gif" onclick="Indigoplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Indigo </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#blue" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#violet" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="indigoname" hidden="true" src="media/audio/name/indigo.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var indigoplay = document.getElementById("indigoname");
+		  function Indigoplay() {indigoplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="indigo_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/indigo.png" width="75%">
+			     	<h1 style="color: black;  ">Bucket</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of violet  -->
+<div data-role="page" id="violet" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#violet_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/violet.gif" onclick="Violetplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Violet </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#indigo" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#pink" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="violetname" hidden="true" src="media/audio/name/violet.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var violetplay = document.getElementById("violetname");
+		  function Violetplay() {violetplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="violet_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/violet.png" width="75%">
+			     	<h1 style="color: black;  ">Yo-yo</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of pink  -->
+<div data-role="page" id="pink" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#pink_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/pink.gif" onclick="Pinkplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Pink </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#violet" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#brown" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="pinkname" hidden="true" src="media/audio/name/pink.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var pinkplay = document.getElementById("pinkname");
+		  function Pinkplay() {pinkplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="pink_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/pink.png" width="75%">
+			     	<h1 style="color: black;  ">Flamingo</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of brown  -->
+<div data-role="page" id="brown" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#brown_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/brown.gif" onclick="Brownplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Brown </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#pink" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#gray" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="brownname" hidden="true" src="media/audio/name/brown.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var brownplay = document.getElementById("brownname");
+		  function Brownplay() {brownplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="brown_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/brown.png" width="75%">
+			     	<h1 style="color: black;  ">Chocolate</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of gray  -->
+<div data-role="page" id="gray" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#gray_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/gray.gif" onclick="Grayplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Gray </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#brown" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#white" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="grayname" hidden="true" src="media/audio/name/gray.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var grayplay = document.getElementById("grayname");
+		  function Grayplay() {grayplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="gray_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed gray">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/gray.png" width="75%">
+			     	<h1 style="color: black;  ">Pillow</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of white  -->
+<div data-role="page" id="white" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#white_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/white.gif" onclick="Whiteplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> White </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#gray" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#black" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px">Next ▷</button></a>
+	</div>
+
+
+
+	<audio id="whitename" hidden="true" src="media/audio/name/white.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var whiteplay = document.getElementById("whitename");
+		  function Whiteplay() {whiteplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="white_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed white">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/white.png" width="75%">
+			     	<h1 style="color: black;  ">Sock</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Start of black  -->
+<div data-role="page" id="black" class="bgc">
+
+	<div role="main" class="ui-content">
+
+		<center>
+		<br>
+		<button style="font-size: 30px;padding-right: 10px;padding-left: 10px; border-radius: 50%;background: linear-gradient(to right, rgba(28,199,136,1) 0%, rgba(14,125,204,1) 100%)" data-toggle="modal" data-target="#black_modal" onclick="pootplay()">✰</button>
+		<br><br>
+		<img src="media/image/black.gif" onclick="Blackplay()" style="width: 95%;" class="jellyrice">
+		<br><br>
+		<h1 style="font-size: 500%; " onclick="pootplay()"> Black </h1>
+		</center>
+
+	</div>
+
+	
+
+	<div style="background: rgba(0,0,0,0);margin: 5px" class="feeter">
+		<a href="#white" onclick="pootplay()" data-transition="pop" data-direction="reverse"><button class="nxt  align-bottom" style="float:left"> ◁ Back </button></a>
+
+		<a href="#main_menu" data-transition="flip"><button onclick="pootplay()" class="nxt align-bottom" style="float:right; margin-right: 10px"> Home ⌂</button></a>
+	</div>
+
+
+
+	<audio id="blackname" hidden="true" src="media/audio/name/black.mp3" type="audio/mp3"> </audio>
+	  <script>
+		  var blackplay = document.getElementById("blackname");
+		  function Blackplay() {blackplay.play();}
+	  </script> 
+
+
+
+
+	  	<div class="modal fade" id="black_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	  		<div class="modal-dialog modal-dialog-centered" role="document">
+
+		    	<div class="modal-body" style="background-color: rgba(255,255,255,.8);border: 1px dashed black">
+
+
+		            <br>
+		            <center>
+
+			     	<img src="media/image/Colors/black.png" width="75%">
+			     	<h1 style="color: black;  ">Watch</h1>
+			 
+			        </center>
+
+		        </div>
+
+		    </div> 
+		</div>
+		
+</div>
+
+
+
+
+
+
+
+
+
+
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
